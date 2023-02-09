@@ -25,4 +25,4 @@ Future plans:
 - allow outputting .omwaddon files to folders outside Mods folder
 - allow reverse editing by changing values in android openmw.cfg to reflect chosen names of .omwaddon files
 
-Feel free to reach out to me for help, bugs, suggestions, or comments by sending me an email.
+Feel free to reach out to me for help, bugs, suggestions, or comments by sending me an <a href="mailto:r_b_inc@yahoo.ca">email</a>.
