@@ -16,7 +16,7 @@ CURRENT VERSION: 0.1
 
 Features:
 
-- only need to modify five values initially and never have to change any values again, just run
+- only need to modify five values initially and never have to change any values again, just update android openmw.cfg and run it
 - automatically disables the output folder and generated .omwaddon file names when converting .cfg file
 - highly customisable, backup option, silent mode, optional date and time stamp
 - intuitive, allows absolute/relative paths, adds leading/trailing slashes, default file names
