@@ -8,7 +8,7 @@ REM /sdcard/omw_nightly/config
 REM note: this batch file assumes all folders exist and contain the right
 REM files, all .cfg and .omwaddon files will be overwritten without prompt so
 REM make sure to enable backup by setting this value to 1
-set "backup=1"
+set "backup="
 
 REM set value to 1 to add a date and time stamp to the end of the file name for
 REM both the omwllf and delta output files, added before the extension, if you
@@ -19,12 +19,12 @@ set "american="
 REM set value to 1 to run omwllf.py and delta_plugin.exe in silent mode,
 REM neither will output anything to screen including errors, but this batch
 REM file will still output to screen
-set "silent=1"
+set "silent="
 
 REM location of android version of openmw.cfg on windows, can be a folder, if
 REM file name not provided then openmw.cfg will be used, if left blank will
 REM assume file name is openmw.cfg and located in the same folder as this
-REM batch file
+REM batch file, can be relative or absolute path
 set "input="
 
 REM location of windows version of openmw.cfg, both omwllf and delta will look
