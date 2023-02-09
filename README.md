@@ -13,6 +13,7 @@ For default function, just place the openmw.cfg from android as well as the fold
 Read the comments in the batch file for further information. I suggest Notepad++ for modifying .cfg and .bat files. Get it <a href="https://notepad-plus-plus.org/downloads/">here</a>.
 
 CURRENT VERSION: 0.1
+
 Features:
 
 - only need to modify five values initially and never have to change any values again
@@ -23,3 +24,5 @@ Future plans:
 
 - allow outputting .omwaddon files to folders outside Mods folder
 - allow reverse editing by changing values in android openmw.cfg to reflect chosen names of .omwaddon files
+
+Feel free to reach out to me for help, bugs, suggestions, or comments by sending me an email.
