@@ -10,7 +10,7 @@ For default function, just place the openmw.cfg from android as well as the fold
 - replaceMod = location of Mods folder on windows
 - omwaddonFolder = output folder of generated .omwaddon files, same name as android, must be inside the above Mods folder
 
-After editing the values, save the batch file and run it. Read the comments in the batch file for further information. I suggest Notepad++ for modifying .cfg and .bat files. Get it <strong><a href="https://notepad-plus-plus.org/downloads/">here</a></strong>.
+After editing the values, save the batch file and run it. Read the comments in the batch file for further information. I suggest Notepad++ for modifying .cfg and .bat files. Get it <strong><a href="https://notepad-plus-plus.org/downloads/">here</a></strong>. Folder and file names are ase sensitive.
 
 CURRENT VERSION: 0.1
 
@@ -26,5 +26,6 @@ Future plans:
 - allow outputting .omwaddon files to folders outside Mods folder
 - allow reverse editing by changing values in android openmw.cfg to reflect chosen names of .omwaddon files
 - silence option works on script output lines too
+- remove case sensitivity
 
 Feel free to reach out to me for help, bugs, suggestions, or comments by sending me an <strong><a href="mailto:r_b_inc@yahoo.ca">email</a></strong>.
