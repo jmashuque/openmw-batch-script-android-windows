@@ -29,8 +29,9 @@ set "input="
 
 REM location of windows version of openmw.cfg, both omwllf and delta will look
 REM for openmw.cfg where windows openmw usually puts it, so leave this blank
-REM unless you want to override default, if file name not provided then
-REM openmw.cfg will be used
+REM unless you want to override default in which case omwllf/delta will not
+REM run, if file name not provided then openmw.cfg will be used, if folder not
+REM provided will output to same folder as this batch file
 set "output="
 
 REM location of Data Files folder on android, must match paths in openmw.cfg,
@@ -101,7 +102,8 @@ if not exist !addonComb! (
 	pause & goto :eof
 )
 
-if "%output%" == "" set output=%userprofile%\documents\my games\openmw
+set outputMask=%userprofile%\Documents\My Games\OpenMW\openmw.cfg
+if "%output%" == "" set output=%outputMask%
 if not "%output:~-4%" == ".cfg" set output=%output%\openmw.cfg
 
 if "%backup%" == "1" (
@@ -127,6 +129,15 @@ for /f "delims=" %%i in ('type "!input!" ^& break ^> "!output!" ') do (
 
 echo ^>^>^>^> finished converting !output!
 echo:
+
+set returnDir=%cd%
+
+echo ^>^>^>^> output %output%
+echo ^>^>^>^> outputMask %outputMask%
+if not "%output%" ==  "%outputMask%" (
+	echo ^>^>^>^> output location modified, cannot run omwllf/delta
+	goto end
+)
 
 if not "%omwllfDir:omwllf.py=%" == "%omwllfDir%" ^
 	set omwllfDir=%omwllfDir:omwllf.py=%
@@ -154,7 +165,6 @@ if "%stamp%" == "1" (
 )
 
 set newDir=%replaceMod:"=%\%omwaddonFolder:"=%
-set returnDir=%cd%
 
 if "%backup%" == "1" (
 	pushd %newDir%
@@ -211,6 +221,7 @@ if %errorlevel% == 1 (
 echo:
 echo ^>^>^>^> %deltaOut% written to %addonComb%
 
+:end
 echo:
 echo ^>^>^>^> process finished
 echo:
