@@ -28,8 +28,9 @@ REM batch file, can be relative or absolute path
 set "input="
 
 REM location of windows version of openmw.cfg, both omwllf and delta will look
-REM for the converted openmw.cfg here by default so its best to leave this
-REM blank, will output to folder or name below if you want to override default
+REM for openmw.cfg where windows openmw usually puts it, so leave this blank
+REM unless you want to override default, if file name not provided then
+REM openmw.cfg will be used
 set "output="
 
 REM location of Data Files folder on android, must match paths in openmw.cfg,
