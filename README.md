@@ -19,6 +19,7 @@ Features:
 - only need to modify five values initially and never have to change any values again
 - automatically disables the output folder and generated .omwaddon file names when converting .cfg file
 - highly customisable, backup option, silent mode, optional date and time stamp
+- supports relative and absolute paths, excluding the .omwaddon Folder
 
 Future plans:
 
