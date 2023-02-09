@@ -8,7 +8,7 @@ For default function, just place the openmw.cfg from android as well as the fold
 - replaceData = location of Data Files folder on windows
 - folderMod = location of Mods folder on android
 - replaceMod = location of Mods folder on windows
-- omwaddonFolder = output folder of generated .omwaddon files, this folder must be inside the above Mods folder, leave blank to output to Mods folder
+- omwaddonFolder = output folder of generated .omwaddon files, must be inside the above Mods folder
 
 Read the comments in the batch file for further information. I suggest Notepad++ for modifying .cfg and .bat files. Get it <strong><a href="https://notepad-plus-plus.org/downloads/">here</a></strong>.
 
