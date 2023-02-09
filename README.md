@@ -24,6 +24,7 @@ Features:
 Future plans:
 
 - allow outputting .omwaddon files to folders outside Mods folder
+- allow passing custom openmw.cfg location to OMWLLF and DeltaPlugin
 - allow reverse editing by changing values in android openmw.cfg to reflect chosen names of .omwaddon files
 - silence option works on script output lines too
 - remove case sensitivity
