@@ -1,4 +1,4 @@
-<h1>Batch File to Automate Generating .omwaddon Files from OMWLLF and Delta-Plugin for Android OpenMW Users</h1>
+<h1>Batch File to Automate Generating .omwaddon Files From OMWLLF and Delta-Plugin for Android OpenMW Users</h1>
 
 This is a simple yet highly customisable batch file that will completely automate the process of creating .omwaddon files from both <strong><a href="https://github.com/jmelesky/omwllf">OMWLLF</a></strong> (by <strong><a href="https://github.com/jmelesky">John Melesky</a></strong>) and <strong><a href="https://gitlab.com/bmwinger/delta-plugin/-/releases">DeltaPlugin</a></strong> (by <strong><a href="https://gitlab.com/bmwinger">Benjamin Winger</a></strong>) using an automatically converted version of openmw.cfg from android installations. This script will take the android openmw.cfg, edit every line to change android paths to corresponding windows paths, save the new openmw.cfg into the default OpenMW folder on windows (which is where both omwllf.py and delta_plugin.exe look for the .cfg file), and then run the two apps to generate the .omwaddon files into the user's chosen folder.
 
