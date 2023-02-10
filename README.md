@@ -28,5 +28,6 @@ Future plans:
 - allow reverse editing by changing values in android openmw.cfg to reflect chosen names of .omwaddon files
 - silence option works on script output lines too
 - remove case sensitivity
+- add openmw-validate and tes3cmd cleaning
 
 Feel free to reach out to me for help, bugs, suggestions, or comments by sending me an <strong><a href="mailto:r_b_inc@yahoo.ca">email</a></strong>.
