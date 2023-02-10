@@ -132,8 +132,6 @@ echo:
 
 set returnDir=%cd%
 
-echo ^>^>^>^> output %output%
-echo ^>^>^>^> outputMask %outputMask%
 if not "%output%" ==  "%outputMask%" (
 	echo ^>^>^>^> output location modified, cannot run omwllf/delta
 	goto end
