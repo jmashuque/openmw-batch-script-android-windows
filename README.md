@@ -16,7 +16,7 @@ For default function, firstly you need your updated android openmw.cfg ready. Ju
 
 Read the comments in the batch file for further information, you will find several neat features. I suggest Notepad++ for modifying .cfg and .bat files. Get it <strong><a href="https://notepad-plus-plus.org/downloads/">here</a></strong>. Folder and file names are case sensitive. Download the apps from the links above. You will have to change the folder value for an app if a new release comes out, you change the default folder name, or you place the app somewhere else.
 
-<br><h3>Current Version: 0.2.1</h3>
+<h3>Current Version: 0.2.1</h3>
 
 <h2>Features:</h2>
 
