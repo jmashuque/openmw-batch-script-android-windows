@@ -4,19 +4,19 @@ This is a simple yet highly functional and customisable batch file that will com
 
 <br>For default function, firstly you need your updated android openmw.cfg ready. Just place the file, as well as the folders for openmw-validator, OMWLLF and DeltaPlugin, in the same folder as runme.bat, then go into the batch file and change the following values:
 
-<br><li>folderData = location of Data Files folder on android</li>
+<li>folderData = location of Data Files folder on android</li>
 <li>replaceData = location of Data Files folder on windows</li>
 <li>folderMod = location of Mods folder on android</li>
 <li>replaceMod = location of Mods folder on windows</li>
 <li>omwaddonFolder = output folder of generated .omwaddon files, same name as android, must be inside the above Mods folder</li>
 
-<br>After editing the values, save the batch file then run it. That's it, now go out there and enjoy your own beautiful world of Morrowind, on your phone!
+After editing the values, save the batch file then run it. That's it, now go out there and enjoy your own beautiful world of Morrowind, on your phone!
 
 <br>Read the comments in the batch file for further information, you will find several neat features. I suggest Notepad++ for modifying .cfg and .bat files. Get it <strong><a href="https://notepad-plus-plus.org/downloads/">here</a></strong>. Folder and file names are case sensitive. Download the apps from the links above. You will have to change the folder value for an app if a new release comes out, you change the default folder name, or you place the app somewhere else.
 
-<h3>Current Version: 0.2.1</h3>
+<br><h3>Current Version: 0.2.1</h3>
 
-<h2>Features:</h2>
+<br><h2>Features:</h2>
 
 <li>only need to modify five values initially, just update android openmw.cfg with proper data/content paths, and run it</li>
 <li>automatically disables the output folder and generated .omwaddon file names when converting .cfg file</li>
