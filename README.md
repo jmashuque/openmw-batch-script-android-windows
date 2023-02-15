@@ -42,4 +42,4 @@ Future plans:
 - add tes3cmd cleaning option
 - output to log
 
-Feel free to reach out to me for help, bugs, suggestions, or comments by sending me an <strong><a href="mailto:r_b_inc@yahoo.ca">email</a></strong>. Thank you to Hristos N. Triantafillou, John Melesky, and Benjamin Winger for their wonderful apps. Thank you to <strong><a href="https://github.com/Sisah2">Sisah2</a></strong> for their work on OpenMW. Thank you to all the modders out there who are still going at it all these years later. And lastly thank you to Bethesda for your amazing vision.
+Feel free to reach out to me for help, bugs, suggestions, or comments by sending me an <strong><a href="mailto:r_b_inc@yahoo.ca">email</a></strong>. Thank you to Hristos N. Triantafillou, John Melesky, and Benjamin Winger for their wonderful apps. Thank you to <strong><a href="https://github.com/Sisah2">Sisah2</a></strong> for their work on OpenMW. Thank you to all the modders out there who are still going at it all these years later. And lastly thank you to Bethesda for their amazing vision.
