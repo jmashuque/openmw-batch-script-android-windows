@@ -4,7 +4,7 @@ This is a simple yet highly functional and customisable batch file that will com
 
 <h2>Usage:</h2>
 
-<br>For default function, firstly you need your updated android openmw.cfg ready. Just place the file, as well as the folders for openmw-validator, OMWLLF and DeltaPlugin, in the same folder as runme.bat, then go into the batch file and change the following values:
+For default function, firstly you need your updated android openmw.cfg ready. Just place the file, as well as the folders for openmw-validator, OMWLLF and DeltaPlugin, in the same folder as runme.bat, then go into the batch file and change the following values:
 
 <li>folderData = location of Data Files folder on android</li>
 <li>replaceData = location of Data Files folder on windows</li>
