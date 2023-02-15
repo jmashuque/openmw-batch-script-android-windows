@@ -14,27 +14,27 @@ After editing the values, save the batch file then run it. That's it, now go out
 
 Read the comments in the batch file for further information, you will find several neat features. I suggest Notepad++ for modifying .cfg and .bat files. Get it <strong><a href="https://notepad-plus-plus.org/downloads/">here</a></strong>. Folder and file names are case sensitive. Download the apps from the links above. You will have to change the folder value for an app if a new release comes out, you change the default folder name, or you place the app somewhere else.
 
-CURRENT VERSION: 0.2.1
+<h2>CURRENT VERSION: 0.2.1</h2>
 
-Features:
+<h2>Features:</h2>
 
 - only need to modify five values initially, just update android openmw.cfg with proper data/content paths, and run it
 - automatically disables the output folder and generated .omwaddon file names when converting .cfg file
 - highly customisable, open or delete validation log, backup before overwriting, silent mode, optional date and time stamp, pause between steps
 - intuitive, allows absolute/relative paths, adds leading/trailing slashes, default file names
 
-Changelog:
+<h2>Changelog:</h2>
 
-0.2.1
+<h3>0.2.1</h3>
 - checks for app file rather than folder
 
-0.2.0:
+<h3>0.2.0:</h3>
 - now runs openmw-validator
 - added pause prompt between running apps
 - slashes/backslashes are now consistent
 - minor cleaning
 
-Future plans:
+<h2>Future plans:</h2>
 
 - allow outputting .omwaddon files to folders outside Mods folder
 - allow passing custom openmw.cfg location to all three apps
