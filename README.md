@@ -20,7 +20,7 @@ Features:
 
 - only need to modify five values initially, just update android openmw.cfg with proper data/content paths, and run it
 - automatically disables the output folder and generated .omwaddon file names when converting .cfg file
-- highly customisable, open or delete validation log, backup before overwriting, silent mode, optional date and time stamp, pause between apps
+- highly customisable, open or delete validation log, backup before overwriting, silent mode, optional date and time stamp, pause between steps
 - intuitive, allows absolute/relative paths, adds leading/trailing slashes, default file names
 
 Changelog 0.2
