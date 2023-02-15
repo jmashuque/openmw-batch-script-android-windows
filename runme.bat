@@ -11,8 +11,9 @@ REM make sure to enable backup by setting this value to 1
 set "backup="
 
 REM set value to 1 to add a date and time stamp to the end of the file name for
-REM both the omwllf and delta output files, added before the extension, if you
-REM are located in The States change value of american to 1 to adjust date
+REM both the omwllf and delta output files, added before the extension, assumes
+REM system date format ends with year, if you are located in the States change
+REM value of american to 1 to adjust date
 set "stamp="
 set "american="
 
