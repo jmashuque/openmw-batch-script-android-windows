@@ -21,17 +21,30 @@ REM neither will output anything to screen including errors, but this batch
 REM file will still output to screen
 set "silent="
 
+REM set value to 1 to pause after each step to allow reading output
+set "delay="
+
+REM set value to 1 to open the generated validator log file after executing
+REM openmw-validator command, it is recommended you use Notepad++ or another
+REM 3rd-party text editor as the log file can get pretty large
+set "openLog="
+
+REM set value to 1 to delete the generated validator log file at end of the
+REM execution
+set "delLog="
+
 REM location of android version of openmw.cfg on windows, can be a folder, if
 REM file name not provided then openmw.cfg will be used, if left blank will
 REM assume file name is openmw.cfg and located in the same folder as this
 REM batch file, can be relative or absolute path
 set "input="
 
-REM location of windows version of openmw.cfg, both omwllf and delta will look
-REM for openmw.cfg where windows openmw usually puts it, so leave this blank
-REM unless you want to override default in which case omwllf/delta will not
-REM run, if file name not provided then openmw.cfg will be used, if folder not
-REM provided will output to same folder as this batch file
+REM location of windows version of openmw.cfg, all three apps will look for
+REM openmw.cfg where windows openmw usually puts it, so leave this blank unless
+REM you want to override defaults, if modified then no apps will run, if file
+REM name not provided then openmw.cfg will be used, and if folder not provided
+REM but file name is provided then will output file name in same folder as this
+REM batch file
 set "output="
 
 REM location of Data Files folder on android, must match paths in openmw.cfg,
@@ -56,6 +69,10 @@ REM has to match android openmw.cfg and must be inside Mods folder, can include
 REM subfolders, if the omwaddon files are in the base Mods folder then just
 REM leave blank
 set "omwaddonFolder=LAST"
+
+REM location of openmw-validator.exe, can be relative or absolute, this app
+REM does not output to screen so check log for errors with your openmw.cfg
+set "validatorDir=openmw-validator-1.7"
 
 REM location of omwllf.py, can be relative or absolute path
 set "omwllfDir=omwllf-master"
@@ -102,7 +119,8 @@ if not exist !addonComb! (
 	pause & goto :eof
 )
 
-set outputMask=%userprofile%\Documents\My Games\OpenMW\openmw.cfg
+set outputPre=%userprofile%\Documents\My Games\OpenMW\
+set outputMask=%outputPre%openmw.cfg
 if "%output%" == "" set output=%outputMask%
 if not "%output:~-4%" == ".cfg" set output=%output%\openmw.cfg
 
@@ -124,6 +142,7 @@ for /f "delims=" %%i in ('type "!input!" ^& break ^> "!output!" ') do (
 	if not "!line:%deltaOut%=!" == "!line!" set line=#
 	set replace=!line:%folderData%=%replaceData%!
 	set replace=!replace:%folderMod%=%replaceMod%!
+	set replace=!replace:/=\!
 	>> "!output!" echo !replace!
 )
 
@@ -137,18 +156,43 @@ if not "%output%" ==  "%outputMask%" (
 	goto end
 )
 
+if "%delay%" == "1" pause & echo:
+
 if not "%omwllfDir:omwllf.py=%" == "%omwllfDir%" ^
 	set omwllfDir=%omwllfDir:omwllf.py=%
 if not "%deltaDir:delta_plugin.exe=%" == "%deltaDir%" ^
 	set deltaDir=%deltaDir:delta_plugin.exe=%
+if not "%omwllfDir:omwllf.py=%" == "%omwllfDir%" ^
+	set omwllfDir=%omwllfDir:omwllf.py=%
+if not "%validatorDir:openmw-validator.exe=%" == "%validatorDir%" ^
+	set validatorDir=%validatorDir:openmw-validator.exe=%
 
-for %%i in (%omwllfDir% %deltaDir%) do (
+for %%i in (%omwllfDir% %deltaDir% %validatorDir%) do (
 	if not exist %%i (
 		echo ^>^>^>^> %%i not found at expected location
 		echo:
 		pause & goto :eof
 	)
 )
+
+pushd %validatorDir%
+echo ^>^>^>^> running openmw-validator.exe
+echo:
+set "validatorLog="
+for /f "tokens=*" %%i in ('openmw-validator') do (set validatorLog=%%i)
+set validatorLog=!validatorLog:Validation completed, log written to: =!
+if %errorlevel% == 1 (
+	echo:
+	echo ^>^>^>^> error returned by openmw-validator.exe
+	echo:
+	pause & goto :eof
+)
+if "%openLog%" == "1" (
+	start "" "%validatorLog%"
+)
+echo:
+echo ^>^>^>^> openmw-validator.exe ran, log at %validatorLog%
+echo:
 
 if "%stamp%" == "1" (
 	set omwllfOut=%omwllfOut:.omwaddon=%
@@ -162,8 +206,9 @@ if "%stamp%" == "1" (
 	set deltaOut=!deltaOut!-!datetime!.omwaddon
 )
 
-set newDir=%replaceMod:"=%\%omwaddonFolder:"=%
+if "%delay%" == "1" pause & echo:
 
+set newDir=%replaceMod:"=%\%omwaddonFolder:"=%
 if "%backup%" == "1" (
 	pushd %newDir%
 	if exist %omwllfOut% (
@@ -174,9 +219,9 @@ if "%backup%" == "1" (
 	popd
 )
 
+cd %returnDir% & cd %omwllfDir%
 echo ^>^>^>^> running omwllf.py
 echo:
-pushd %omwllfDir%
 if "%silent%" == "1" (
 	python omwllf.py -m %omwllfOut% -d ^"%newDir%^" > NUL
 ) else (
@@ -184,12 +229,14 @@ if "%silent%" == "1" (
 )
 if %errorlevel% == 1 (
 	echo:
-	echo ^>^>^>^> error returned by omwllf
+	echo ^>^>^>^> error returned by omwllf.py
 	echo:
 	pause & goto :eof
 )
 echo ^>^>^>^> %omwllfOut% written to %addonComb%
 echo:
+
+if "%delay%" == "1" pause & echo:
 
 if "%backup%" == "1" (
 	pushd %newDir%
@@ -201,9 +248,9 @@ if "%backup%" == "1" (
 	popd
 )
 
+cd %returnDir% & cd %deltaDir%
 echo ^>^>^>^> running delta_plugin.exe
 echo:
-cd %returnDir% & cd %deltaDir%
 if "%silent%" == "1" (
 	delta_plugin -q merge ^"%newDir%\%deltaOut%^" > NUL
 ) else (
@@ -212,12 +259,14 @@ if "%silent%" == "1" (
 
 if %errorlevel% == 1 (
 	echo:
-	echo ^>^>^>^> error returned by delta-plugin
+	echo ^>^>^>^> error returned by delta_plugin.exe
 	echo:
 	pause & goto :eof
 )
 echo:
 echo ^>^>^>^> %deltaOut% written to %addonComb%
+
+if "%delLog%" == "1" del "%validatorLog%"
 
 :end
 echo:
