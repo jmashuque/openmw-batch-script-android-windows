@@ -2,7 +2,7 @@
 
 This is a simple yet highly functional and customisable batch file that will completely automate the process of validating your openmw.cfg file using <strong><a href="https://mw.moddinghall.com/file/28-openmw-validator">openmw-validator</a></strong> (by <strong><a href="https://git.sr.ht/~hristoast">Hristos N. Triantafillou</a></strong>), and then creating .omwaddon files from both <strong><a href="https://github.com/jmelesky/omwllf">OMWLLF</a></strong> (by <strong><a href="https://github.com/jmelesky">John Melesky</a></strong>) and <strong><a href="https://gitlab.com/bmwinger/delta-plugin/-/releases">DeltaPlugin</a></strong> (by <strong><a href="https://gitlab.com/bmwinger">Benjamin Winger</a></strong>), using an automatically converted openmw.cfg from an android version. All you need is your android openmw.cfg and the three apps, and the script does the rest. Just modify the five values mentioned below and you're good to go, you never have to change the batch file again unless there is a new version of one of the apps. This script will take the android openmw.cfg, edit every line to change android paths to corresponding windows paths, save the new openmw.cfg into the default OpenMW folder on windows (which is where all three apps will look for the file), and then run the three apps and output the .omwaddon files into the user's chosen folder. This is for people like me who do not use a mod manager and prefer a hands-on approach. If you're sick of modifying the windows openmw.cfg and then running every app each time you make a change to your mod list, then this is my solution for you.
 
-For default function, firstly you need your updated android openmw.cfg ready. Just place the file, as well as the folders for openmw-validator, OMWLLF and DeltaPlugin, in the same folder as this batch file, go into the batch file and change the following values:
+For default function, firstly you need your updated android openmw.cfg ready. Just place the file, as well as the folders for openmw-validator, OMWLLF and DeltaPlugin, in the same folder as runme.bat, then go into the batch file and change the following values:
 
 - folderData = location of Data Files folder on android
 - replaceData = location of Data Files folder on windows
@@ -10,7 +10,7 @@ For default function, firstly you need your updated android openmw.cfg ready. Ju
 - replaceMod = location of Mods folder on windows
 - omwaddonFolder = output folder of generated .omwaddon files, same name as android, must be inside the above Mods folder
 
-After editing the values, save the batch file and run it. That's it, now go out there and enjoy the beautiful world of Morrowind, personalised by you, on your phone!
+After editing the values, save the batch file then run it. That's it, now go out there and enjoy your own beautiful world of Morrowind, on your phone!
 
 Read the comments in the batch file for further information, you will find several neat features. I suggest Notepad++ for modifying .cfg and .bat files. Get it <strong><a href="https://notepad-plus-plus.org/downloads/">here</a></strong>. Folder and file names are case sensitive. Download the apps from the links above. You will have to change the folder value for an app if a new release comes out, you change the default folder name, or you place the app somewhere else.
 
