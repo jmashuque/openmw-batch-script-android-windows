@@ -4,7 +4,7 @@ This is a simple yet highly functional and customisable batch file that will com
 
 For default function, firstly you need your updated android openmw.cfg ready. Just place the file, as well as the folders for openmw-validator, OMWLLF and DeltaPlugin, in the same folder as runme.bat, then go into the batch file and change the following values:
 
-- folderData = location of Data Files folder on android
+<li>folderData = location of Data Files folder on android</li>
 - replaceData = location of Data Files folder on windows
 - folderMod = location of Mods folder on android
 - replaceMod = location of Mods folder on windows
@@ -35,7 +35,7 @@ Read the comments in the batch file for further information, you will find sever
 - slashes/backslashes are now consistent
 - minor cleaning
 
-<h2>Future plans:<h2>
+<h2>Future plans:</h2>
 
 - allow outputting .omwaddon files to folders outside Mods folder
 - allow passing custom openmw.cfg location to all three apps
