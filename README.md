@@ -14,7 +14,7 @@ After editing the values, save the batch file then run it. That's it, now go out
 
 Read the comments in the batch file for further information, you will find several neat features. I suggest Notepad++ for modifying .cfg and .bat files. Get it <strong><a href="https://notepad-plus-plus.org/downloads/">here</a></strong>. Folder and file names are case sensitive. Download the apps from the links above. You will have to change the folder value for an app if a new release comes out, you change the default folder name, or you place the app somewhere else.
 
-<h2>CURRENT VERSION: 0.2.1</h2>
+<h2>Current Version: 0.2.1</h2>
 
 <h2>Features:</h2>
 
