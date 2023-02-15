@@ -5,10 +5,10 @@ This is a simple yet highly functional and customisable batch file that will com
 For default function, firstly you need your updated android openmw.cfg ready. Just place the file, as well as the folders for openmw-validator, OMWLLF and DeltaPlugin, in the same folder as runme.bat, then go into the batch file and change the following values:
 
 <li>folderData = location of Data Files folder on android</li>
-- replaceData = location of Data Files folder on windows
-- folderMod = location of Mods folder on android
-- replaceMod = location of Mods folder on windows
-- omwaddonFolder = output folder of generated .omwaddon files, same name as android, must be inside the above Mods folder
+<li>replaceData = location of Data Files folder on windows</li>
+<li>folderMod = location of Mods folder on android</li>
+<li>replaceMod = location of Mods folder on windows</li>
+<li>omwaddonFolder = output folder of generated .omwaddon files, same name as android, must be inside the above Mods folder</li>
 
 After editing the values, save the batch file then run it. That's it, now go out there and enjoy your own beautiful world of Morrowind, on your phone!
 
@@ -18,32 +18,32 @@ Read the comments in the batch file for further information, you will find sever
 
 <h2>Features:</h2>
 
-- only need to modify five values initially, just update android openmw.cfg with proper data/content paths, and run it
-- automatically disables the output folder and generated .omwaddon file names when converting .cfg file
-- highly customisable, open or delete validation log, backup before overwriting, silent mode, optional date and time stamp, pause between steps
-- intuitive, allows absolute/relative paths, adds leading/trailing slashes, default file names
+<li>only need to modify five values initially, just update android openmw.cfg with proper data/content paths, and run it</li>
+<li>automatically disables the output folder and generated .omwaddon file names when converting .cfg file</li>
+<li>highly customisable, open or delete validation log, backup before overwriting, silent mode, optional date and time stamp, pause between steps</li>
+<li>intuitive, allows absolute/relative paths, adds leading/trailing slashes, default file names</li>
 
 <h2>Changelog:</h2>
 
 <h3>0.2.1</h3>
-- checks for app file rather than folder
-- changes to comments
+<li>checks for app file rather than folder</li>
+<li>changes to comments</li>
 
 <h3>0.2.0:</h3>
-- now runs openmw-validator
-- added pause prompt between running apps
-- slashes/backslashes are now consistent
-- minor cleaning
+<li>now runs openmw-validator</li>
+<li>added pause prompt between running apps</li>
+<li>slashes/backslashes are now consistent</li>
+<li>minor cleaning</li>
 
 <h2>Future plans:</h2>
 
-- allow outputting .omwaddon files to folders outside Mods folder
-- allow passing custom openmw.cfg location to all three apps
-- allow reverse editing by changing values in android openmw.cfg to reflect chosen names of .omwaddon files
-- silence option works on script output lines too
-- remove case sensitivity
-- disable .omwaddon file names while ignoring timestamps or longer names
-- add tes3cmd cleaning option
-- output to log
+<li>allow outputting .omwaddon files to folders outside Mods folder</li>
+<li>allow passing custom openmw.cfg location to all three apps</li>
+<li>allow reverse editing by changing values in android openmw.cfg to reflect chosen names of .omwaddon files</li>
+<li>silence option works on script output lines too</li>
+<li>remove case sensitivity</li>
+<li>disable .omwaddon file names while ignoring timestamps or longer names</li>
+<li>add tes3cmd cleaning option</li>
+<li>output to log</li>
 
 Feel free to reach out to me for help, bugs, suggestions, or comments by sending me an <strong><a href="mailto:r_b_inc@yahoo.ca">email</a></strong>. Thank you to Hristos N. Triantafillou, John Melesky, and Benjamin Winger for their wonderful apps. Thank you to <strong><a href="https://github.com/Sisah2">Sisah2</a></strong> for their work on OpenMW. Thank you to all the modders out there who are still going at it all these years later. And lastly thank you to Bethesda for their amazing vision.
