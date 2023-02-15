@@ -37,6 +37,7 @@ Future plans:
 - allow reverse editing by changing values in android openmw.cfg to reflect chosen names of .omwaddon files
 - silence option works on script output lines too
 - remove case sensitivity
+- disable .omwaddon file names while ignoring timestamps or longer names
 - add tes3cmd cleaning option
 - output to log
 
