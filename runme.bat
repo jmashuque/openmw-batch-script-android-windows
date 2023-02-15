@@ -71,6 +71,10 @@ REM subfolders, if the omwaddon files are in the base Mods folder then just
 REM leave blank
 set "omwaddonFolder=LAST"
 
+REM note: the file names of the apps used by this script are hard-coded and
+REM will not be recognised if the file names have been changed, only folder
+REM names can be modified
+
 REM location of openmw-validator.exe, can be relative or absolute, this app
 REM does not output to screen so check log for errors with your openmw.cfg
 set "validatorDir=openmw-validator-1.7"
