@@ -22,7 +22,6 @@ Features:
 - automatically disables the output folder and generated .omwaddon file names when converting .cfg file
 - highly customisable, open or delete validation log, backup before overwriting, silent mode, optional date and time stamp, pause between steps
 - intuitive, allows absolute/relative paths, adds leading/trailing slashes, default file names
-- run from command prompt while still using relative paths, returns to batch file folder after execution
 
 Changelog 0.2
 
