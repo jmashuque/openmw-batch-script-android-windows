@@ -12,7 +12,7 @@ set "backup="
 
 REM set value to 1 to add a date and time stamp to the end of the file name for
 REM both the omwllf and delta output files, added before the extension, if you
-REM are located in the States change value of American to 1 to adjust date
+REM are located in The States change value of american to 1 to adjust date
 set "stamp="
 set "american="
 
@@ -31,7 +31,7 @@ set "openLog="
 
 REM set value to 1 to delete the generated validator log file at end of the
 REM execution
-set "delLog="
+set "deleteLog="
 
 REM location of android version of openmw.cfg on windows, can be a folder, if
 REM file name not provided then openmw.cfg will be used, if left blank will
@@ -266,7 +266,7 @@ if %errorlevel% == 1 (
 echo:
 echo ^>^>^>^> %deltaOut% written to %addonComb%
 
-if "%delLog%" == "1" del "%validatorLog%"
+if "%deleteLog%" == "1" del "%validatorLog%"
 
 :end
 echo:
