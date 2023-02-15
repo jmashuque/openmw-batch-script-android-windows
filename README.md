@@ -26,7 +26,6 @@ Features:
 Changelog 0.2
 
 - now runs openmw-validator
-- 
 - slashes/backslashes are now consistent
 - minor cleaning and optimising
 
