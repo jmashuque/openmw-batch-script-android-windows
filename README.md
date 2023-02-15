@@ -27,6 +27,7 @@ Read the comments in the batch file for further information, you will find sever
 
 <h3>0.2.1</h3>
 - checks for app file rather than folder
+- changes to comments
 
 <h3>0.2.0:</h3>
 - now runs openmw-validator
