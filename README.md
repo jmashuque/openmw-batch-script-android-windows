@@ -35,7 +35,7 @@ Read the comments in the batch file for further information, you will find sever
 - slashes/backslashes are now consistent
 - minor cleaning
 
-<h2>Future plans:</h2>
+<h2>Future plans:<h2>
 
 - allow outputting .omwaddon files to folders outside Mods folder
 - allow passing custom openmw.cfg location to all three apps
