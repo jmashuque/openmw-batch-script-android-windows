@@ -10,7 +10,7 @@ For default function, firstly you need your updated android openmw.cfg ready. Ju
 <li>replaceMod = location of Mods folder on windows</li>
 <li>omwaddonFolder = output folder of generated .omwaddon files, same name as android, must be inside the above Mods folder</li>
 
-After editing the values, save the batch file then run it. That's it, now go out there and enjoy your own beautiful world of Morrowind, on your phone!
+<br>After editing the values, save the batch file then run it. That's it, now go out there and enjoy your own beautiful world of Morrowind, on your phone!
 
 Read the comments in the batch file for further information, you will find several neat features. I suggest Notepad++ for modifying .cfg and .bat files. Get it <strong><a href="https://notepad-plus-plus.org/downloads/">here</a></strong>. Folder and file names are case sensitive. Download the apps from the links above. You will have to change the folder value for an app if a new release comes out, you change the default folder name, or you place the app somewhere else.
 
@@ -46,4 +46,4 @@ Read the comments in the batch file for further information, you will find sever
 <li>add tes3cmd cleaning option</li>
 <li>output to log</li>
 
-Feel free to reach out to me for help, bugs, suggestions, or comments by sending me an <strong><a href="mailto:r_b_inc@yahoo.ca">email</a></strong>. Thank you to Hristos N. Triantafillou, John Melesky, and Benjamin Winger for their wonderful apps. Thank you to <strong><a href="https://github.com/Sisah2">Sisah2</a></strong> for their work on OpenMW. Thank you to all the modders out there who are still going at it all these years later. And lastly thank you to Bethesda for their amazing vision.
+<br>Feel free to reach out to me for help, bugs, suggestions, or comments by sending me an <strong><a href="mailto:r_b_inc@yahoo.ca">email</a></strong>. Thank you to Hristos N. Triantafillou, John Melesky, and Benjamin Winger for their wonderful apps. Thank you to <strong><a href="https://github.com/Sisah2">Sisah2</a></strong> for their work on OpenMW. Thank you to all the modders out there who are still going at it all these years later. And lastly thank you to Bethesda for their amazing vision.
