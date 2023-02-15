@@ -158,14 +158,12 @@ if not "%output%" ==  "%outputMask%" (
 
 if "%delay%" == "1" pause & echo:
 
-if not "%omwllfDir:omwllf.py=%" == "%omwllfDir%" ^
-	set omwllfDir=%omwllfDir:omwllf.py=%
-if not "%deltaDir:delta_plugin.exe=%" == "%deltaDir%" ^
-	set deltaDir=%deltaDir:delta_plugin.exe=%
-if not "%omwllfDir:omwllf.py=%" == "%omwllfDir%" ^
-	set omwllfDir=%omwllfDir:omwllf.py=%
-if not "%validatorDir:openmw-validator.exe=%" == "%validatorDir%" ^
-	set validatorDir=%validatorDir:openmw-validator.exe=%
+if "%validatorDir:openmw-validator.exe=%" == "%validatorDir%"^
+    set validatorDir=%validatorDir%openmw-validator.exe
+if "%omwllfDir:omwllf.py=%" == "%omwllfDir%"^
+    set omwllfDir=%omwllfDir%omwllf.py
+if "%deltaDir:delta_plugin.exe=%" == "%deltaDir%"^
+    set deltaDir=%deltaDir%delta_plugin.exe
 
 for %%i in (%omwllfDir% %deltaDir% %validatorDir%) do (
 	if not exist %%i (
@@ -174,6 +172,13 @@ for %%i in (%omwllfDir% %deltaDir% %validatorDir%) do (
 		pause & goto :eof
 	)
 )
+
+if not "%validatorDir:openmw-validator.exe=%" == "%validatorDir%"^
+    set validatorDir=%validatorDir:openmw-validator.exe=%
+if not "%omwllfDir:omwllf.py=%" == "%omwllfDir%"^
+    set omwllfDir=%omwllfDir:omwllf.py=%
+if not "%deltaDir:delta_plugin.exe=%" == "%deltaDir%"^
+    set deltaDir=%deltaDir:delta_plugin.exe=%
 
 pushd %validatorDir%
 echo ^>^>^>^> running openmw-validator.exe
@@ -191,7 +196,7 @@ if "%openLog%" == "1" (
 	start "" "%validatorLog%"
 )
 echo:
-echo ^>^>^>^> openmw-validator.exe ran, log at %validatorLog%
+echo ^>^>^>^> openmw-validator.exe finished, log saved to: %validatorLog%
 echo:
 
 if "%stamp%" == "1" (
