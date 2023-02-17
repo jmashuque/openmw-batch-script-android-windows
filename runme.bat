@@ -34,6 +34,9 @@ REM set value to 1 to delete the generated validator log file at end of the
 REM execution
 set "deleteLog="
 
+REM set value to 1 to use windows mode which skips converting the openmw.cfg
+set "winMode="
+
 REM location of android version of openmw.cfg on windows, can be a folder, if
 REM file name not provided then openmw.cfg will be used, if left blank will
 REM assume file name is openmw.cfg and located in the same folder as this
@@ -103,6 +106,8 @@ if "%omwaddonFolder%" == "" set omwaddonFolder=/
 if "%omwaddonFolder:~0,1%" == "\" set omwaddonFolder=%omwaddonFolder:~1%
 if "%omwaddonFolder:~-1%" == "\" set omwaddonFolder=%omwaddonFolder:~0,-1%
 
+if "%winMode%" == "1" goto skipped
+
 if not "%input:~-4%" == ".cfg" set input=%input%\openmw.cfg
 if not exist !input! (
 	echo ^>^>^>^> !input! not found at expected location
@@ -152,16 +157,19 @@ for /f "delims=" %%i in ('type "!input!" ^& break ^> "!output!" ') do (
 )
 
 echo ^>^>^>^> finished converting !output!
-echo:
 
-set returnDir=%cd%
-
-if not "%output%" ==  "%outputMask%" (
+if not "%output%" == "%outputMask%" (
+	echo:
 	echo ^>^>^>^> output location modified, cannot run omwllf/delta
 	goto end
 )
 
 if "%delay%" == "1" pause & echo:
+
+:skipped
+
+set returnDir=%cd%
+echo:
 
 if "%validatorDir:openmw-validator.exe=%" == "%validatorDir%"^
     set validatorDir=%validatorDir%openmw-validator.exe
@@ -279,6 +287,7 @@ echo ^>^>^>^> %deltaOut% written to %addonComb%
 if "%deleteLog%" == "1" del "%validatorLog%"
 
 :end
+
 echo:
 echo ^>^>^>^> process finished
 echo:
