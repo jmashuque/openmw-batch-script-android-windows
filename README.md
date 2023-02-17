@@ -1,6 +1,6 @@
 <h1>Batch File for OpenMW Android Users to Automatically Convert openmw.cfg, Run openmw-validator, and Generate OMWLLF/DeltaPlugin .omwaddon Files</h1>
 
-This is a simple yet highly functional and customisable batch file that will completely automate the process of validating your android openmw.cfg file using <strong><a href="https://mw.moddinghall.com/file/28-openmw-validator">openmw-validator</a></strong> (by <strong><a href="https://git.sr.ht/~hristoast">Hristos N. Triantafillou</a></strong>), and then creating .omwaddon files from both <strong><a href="https://github.com/jmelesky/omwllf">OMWLLF</a></strong> (by <strong><a href="https://github.com/jmelesky">John Melesky</a></strong>) and <strong><a href="https://gitlab.com/bmwinger/delta-plugin/-/releases">DeltaPlugin</a></strong> (by <strong><a href="https://gitlab.com/bmwinger">Benjamin Winger</a></strong>), using an automatically converted openmw.cfg. All you need is your android openmw.cfg and the three apps, and the script does the rest. Just modify the five values mentioned below and you're good to go, you never have to change the batch file again unless there is a new version of one of the apps. This script will take the android openmw.cfg, edit every line to change android paths to corresponding windows paths, save the new openmw.cfg into the default OpenMW folder on windows (which is where all three apps will look for the file), and then run the three apps and output the .omwaddon files into the user's chosen folder. This is for people like me who do not use a mod manager and prefer a hands-on approach. If you're sick of modifying the windows openmw.cfg and then running every app each time you make a change to your mod list, then this is my solution for you.
+This is a simple yet highly functional and customisable batch file that will completely automate the process of validating your android openmw.cfg file using <strong><a href="https://mw.moddinghall.com/file/28-openmw-validator">openmw-validator</a></strong> (by <strong><a href="https://git.sr.ht/~hristoast">Hristos N. Triantafillou</a></strong>), and then creating .omwaddon files from both <strong><a href="https://github.com/jmelesky/omwllf">OMWLLF</a></strong> (by <strong><a href="https://github.com/jmelesky">John Melesky</a></strong>) and <strong><a href="https://gitlab.com/bmwinger/delta-plugin/-/releases">DeltaPlugin</a></strong> (by <strong><a href="https://gitlab.com/bmwinger">Benjamin Winger</a></strong>), using an automatically converted openmw.cfg. All you need is your android openmw.cfg and the three apps, and the script does the rest. Just modify the five values mentioned below and you're good to go, you never have to change the batch file again unless there is a new version of one of the apps. This script will take the android openmw.cfg, edit every line to change android paths to corresponding windows paths, save the new openmw.cfg into the default OpenMW folder on windows (which is where all three apps will look for the file), and then run the three apps and output the .omwaddon files into the user's chosen folder. This is for people like me who do not use a mod manager and prefer a hands-on approach. If you're sick of modifying the windows openmw.cfg and then running every app each time you make a change to your mod list, then this is my solution for you. You can even use this if you use windows to automate running the three apps.
 
 <h2>Usage:</h2>
 
@@ -25,8 +25,12 @@ Read the comments in the batch file for further information, you will find sever
 <li>automatically disables the output folder and generated .omwaddon file names when converting .cfg file</li>
 <li>highly customisable, open or delete validation log, backup before overwriting, silent mode, optional date and time stamp, pause between steps</li>
 <li>intuitive, allows absolute/relative paths, adds leading/trailing slashes, default file names</li>
+<li>works with windows too, enable windows mode to skip converting openmw.cfg</li>
 
 <h2>Changelog:</h2>
+
+<h3>0.2.2</h3>
+<li>windows mode added, see comments</li>
 
 <h3>0.2.1</h3>
 <li>checks for app file rather than folder</li>
@@ -44,7 +48,6 @@ Read the comments in the batch file for further information, you will find sever
 <li>allow passing custom openmw.cfg location to all three apps</li>
 <li>allow reverse editing by changing values in android openmw.cfg to reflect chosen names of .omwaddon files</li>
 <li>silence option works on script output lines too</li>
-<li>remove case sensitivity</li>
 <li>disable .omwaddon file names while ignoring timestamps or longer names</li>
 <li>add tes3cmd cleaning option</li>
 <li>output to log</li>
