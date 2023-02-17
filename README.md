@@ -14,7 +14,7 @@ For default function, firstly you need your updated android openmw.cfg ready. Ju
 
 <br>After editing the values, save the batch file then run it. That's it, now go out there and enjoy your own beautiful world of Morrowind, on your phone!
 
-Read the comments in the batch file for further information, you will find several neat features. I suggest Notepad++ for modifying .cfg and .bat files. Get it <strong><a href="https://notepad-plus-plus.org/downloads/">here</a></strong>. Folder and file names are case sensitive. Download the apps from the links above. You will have to change the folder value for an app if a new release comes out, you change the default folder name, or you place the app somewhere else.
+Read the comments in the batch file for further information, you will find several neat features. Windows users can enable windows mode to skip rewriting the openmw.cfg, you only need to modify "replaceMod" and "omwaddonFolder" values. I suggest Notepad++ for modifying .cfg and .bat files. Get it <strong><a href="https://notepad-plus-plus.org/downloads/">here</a></strong>. Folder and file names are case sensitive. Download the apps from the links above. You will have to change the folder value for an app if a new release comes out, you change the default folder name, or you place the app somewhere else.
 
 <h3>Current Version: 0.2.1</h3>
 
@@ -26,6 +26,7 @@ Read the comments in the batch file for further information, you will find sever
 <li>highly customisable, open or delete validation log, backup before overwriting, silent mode, optional date and time stamp, pause between steps</li>
 <li>intuitive, allows absolute/relative paths, adds leading/trailing slashes, default file names</li>
 <li>works with windows too, enable windows mode to skip converting openmw.cfg</li>
+<li>no prompts, no executables, no java, no python, no perl, just a small batch file</li>
 
 <h2>Changelog:</h2>
 
