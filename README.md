@@ -66,6 +66,7 @@ Read the comments in the batch file for further information, you will find sever
 <li>expand windows mode by allowing temporarily modifying openmw.cfg to disable omwaddon files and folder then re-enabling</li>
 <li>silence option works on script output lines too</li>
 <li>disable .omwaddon file names while ignoring timestamps or longer names</li>
+<li>preserve empty lines when converting to openmw.cfg</li>
 <li>add tes3cmd cleaning option</li>
 <li>output to log</li>
 
