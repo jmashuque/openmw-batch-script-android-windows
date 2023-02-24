@@ -50,10 +50,10 @@ set "delay="
 
 REM set value to 1 to use windows mode which skips converting android paths,
 REM instead the input is set to the default windows openmw.cfg, if used with the
-REM disable files or folder option this will create a temporary 1:1 copy of the
-REM .cfg file and disable entries in the original copies and after execution
-REM it will delete the modified .cfg and rename the temporary back to the
-REM original so date modified is unchanged
+REM disable files or folder option this will create a temporary copy of the .cfg
+REM file and disable entries in the original copy and after execution it will
+REM delete the modified .cfg and rename the temporary back to the original so
+REM date modified is unchanged
 set "winMode="
 
 REM set value to 1 to enable conversion of openmw.cfg and disabling .omwaddon
@@ -162,9 +162,9 @@ REM excluding stamp portion
 set "deltaOut=delta.omwaddon"
 
 REM END OF USER MODIFIABLE VARIABLES, do not modify anything below unless you
-REM know what you are doing, this script cannot create or delete folders but it
-REM can overwrite any file with a matching folder and file name or backup name
-REM without prompting so be careful when creating or modifying batch files
+REM know what you are doing, this script cannot delete folders but it can
+REM overwrite any file with a matching folder and file name or backup name
+REM without prompting so be careful when creating or modifying batch file
 
 REM ----------------------------------------------------------------------------
 
