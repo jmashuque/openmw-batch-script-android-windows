@@ -90,12 +90,8 @@ Additionally you may define the values inside the included variables.cfg file if
 <li>allow outputting .omwaddon files to folders outside Mods folder</li>
 <li>allow passing custom openmw.cfg location to all three apps</li>
 <li>silence option works on script output lines too</li>
-<li>disable .omwaddon file names while ignoring timestamps</li>
-<li>preserve empty lines when converting the .cfg</li>
-<li>check folder to be disabled for other mods</li>
-<li>list of mods to exclude/disable for compatibility reasons</li>
-<li>read variables from file</li>
-<li>add tes3cmd cleaning option</li>
 <li>output to log</li>
+<li>check folder to be disabled for other mods</li>
+<li>add tes3cmd cleaning option</li>
 
 <br>Feel free to reach out to me for help, bugs, suggestions, or comments by sending me an <strong><a href="mailto:r_b_inc@yahoo.ca">email</a></strong>. Thank you to Hristos N. Triantafillou, John Melesky, and Benjamin Winger for their wonderful apps. Thank you to <strong><a href="https://github.com/OpenMW">the OpenMW team</a></strong>, <strong><a href="https://github.com/xyzz">xyzz</a></strong>, <strong><a href="https://github.com/docent27">Dmitry</a></strong>, and <strong><a href="https://github.com/Sisah2">Sisah2</a></strong> for their amazing work on OpenMW. Thank you to all the modders out there, specially those who are still going at it all these years later. And lastly thank you to Bethesda for making one of my most favourite games.
