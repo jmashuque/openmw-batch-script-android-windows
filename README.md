@@ -38,7 +38,7 @@ Additionally you may define the values inside the included variables.cfg file if
 
 <h2>Changelog:</h2>
 
-<h3>0.4.0</h3>
+<h3>0.4.0 (2023-03-02)</h3>
 <li>allows specifying a comma separated list of mods to disable before running apps</li>
 <li>option to read variables from a specified file instead of the batch file</li>
 <li>empty lines are preserved when converting openmw.cfg</li>
@@ -49,7 +49,7 @@ Additionally you may define the values inside the included variables.cfg file if
 <li>OpenMW folder is now created if it doesn't exist</li>
 <li>cleaned some terrible coding</li>
 
-<h3>0.3.0</h3>
+<h3>0.3.0 (2023-02-24)</h3>
 <li>enable or disable individual steps</li>
 <li>output folder is now created if it doesn't exist, no longer exits if folder missing</li>
 <li>added option to disable relevant .omwaddon files and folder instead of forcing it</li>
@@ -68,21 +68,21 @@ Additionally you may define the values inside the included variables.cfg file if
 <li>alerts user that process finished after errors</li>
 <li>other small bug fixes</li>
 
-<h3>0.2.2</h3>
+<h3>0.2.2 (2023-02-17)</h3>
 <li>windows mode added, see comments</li>
 <li>backup skips .omwaddon files if timestamp enabled</li>
 
-<h3>0.2.1</h3>
+<h3>0.2.1 (2023-02-14)</h3>
 <li>checks for existence of app name rather than folder</li>
 
-<h3>0.2.0:</h3>
+<h3>0.2.0 (2023-02-14):</h3>
 <li>now runs openmw-validator</li>
 <li>options to open openmw-validator log and delete aftter execution</li>
 <li>added pause prompt between running apps</li>
 <li>slashes/backslashes are now consistent</li>
 <li>minor cleaning</li>
 
-<h3>0.1.0:</h3>
+<h3>0.1.0 (2023-02-09):</h3>
 <li>initial release</li>
 
 <h2>Future plans:</h2>
