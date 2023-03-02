@@ -41,7 +41,7 @@ Additionally you may define the values inside the included variables.cfg file if
 <h3>0.4.0</h3>
 <li>allows specifying a comma separated list of mods to disable before running apps</li>
 <li>option to read variables from a specified file instead of the batch file</li>
-<li>spaces are preserved when converting openmw.cfg</li>
+<li>empty lines are preserved when converting openmw.cfg</li>
 <li>exits only batch process and not cmd</li>
 <li>fixed error outputting to base mods folder</li>
 <li>python executable location can be specified</li>
