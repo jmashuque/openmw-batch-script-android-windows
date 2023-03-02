@@ -22,7 +22,7 @@ After weeks of painstakingly modding OpenMW android, one mod at a time, trying d
 
 <h2>Usage:</h2>
 
-For default function, firstly you need your latest openmw.cfg file ready. Just place the file, as well as the folders for openmw-validator, OMWLLF and DeltaPlugin, in the same folder as runme.bat, then go into the batch file and change the following values:
+On the right side of this page, under Releases, click the latest version, download the zip, and unpack it somewhere. For default function, firstly you need your latest openmw.cfg file ready. Just place the file, as well as the folders for openmw-validator, OMWLLF and DeltaPlugin, in the same folder as runme.bat, then go into the batch file and change the following values:
 
 <li>folderData = location of Data Files folder on android</li>
 <li>replaceData = location of Data Files folder on windows</li>
@@ -32,7 +32,7 @@ For default function, firstly you need your latest openmw.cfg file ready. Just p
 
 <br>After editing the values, save the batch file then run it. That's it, now go out there and enjoy your own customised and unique world of Morrowind, on your phone!
 
-Additionally you may define the values inside the included variables.cfg file if that's easier. Windows users need to enable windows mode and only need to modify "replaceMod" and "omwaddonFolder" values, the script will use a temp file to preserve the original windows openmw.cfg file. Read the comments in the batch file for further information, you will find many options to play around with. I suggest <strong><a href="https://notepad-plus-plus.org/downloads/">Notepad++</a></strong> for modifying .bat and .cfg files (it's free). Download all the apps from the links above, you only need the ones you enable. OpenMW windows is not necessary for any of the apps to function. OMWLLF requires python.
+Additionally you may define the values inside the included variables.cfg file if that's easier. Windows users need to enable windows mode and only need to modify "replaceMod" and "omwaddonFolder" values, the script will use a temp file to preserve the original windows openmw.cfg file so a separate copy of openmw.cfg does not need to be provided. Read the comments in the batch file for further information, you will find many options to play around with. I suggest <strong><a href="https://notepad-plus-plus.org/downloads/">Notepad++</a></strong> for modifying .bat and .cfg files (it's free). Download all the apps from the links above, you only need the ones you enable. OpenMW windows is not necessary for any of the apps to function. OMWLLF requires python.
 
 <h3>Current Version: 0.4.0</h3>
 
