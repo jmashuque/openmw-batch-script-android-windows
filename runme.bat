@@ -6,6 +6,18 @@ REM ----------------------------------------------------------------------------
 REM ----------- openmw android windows validator omwllf delta script -----------
 REM ----------------------------------------------------------------------------
 
+REM to use defaults, place the android openmw.cfg (if applicable) as well as the
+REM validator, omwllf and delta folders in the same folder as this batch file,
+REM by default the android openmw.cfg will be in "/sdcard/omw_nightly/config/",
+REM your folder name might be a bit different depending on your OpenMW build,
+REM use "/sdcard" instead of "/storage/emulated/0", the default windows copy is
+REM in "%userprofile%\Documents\My Games\OpenMW\", you can modify the
+REM input/output folders and the name of the .cfg as well as folders for the
+REM apps, and you can choose the output folder and names of the .omwaddon files,
+REM android users need to change values for folderData, replaceData, folderMod,
+REM replaceMod, and omwaddonFolder, and windows users only need to change the
+REM last two
+
 REM this script tries to correct for some errors and checks for some files but
 REM also makes many assumptions, including assuming the .cfg file is formatted
 REM in the correct way and does not contain the following special characters
@@ -13,23 +25,13 @@ REM (!, <, >, |, &, ^, =, :, ", `, ?), all values are case-sensitive, enter
 REM values inside existing quotes immediately after the equal signs, do not
 REM change the variable names, if you have large mod lists then it may seem like
 REM the script has frozen but it can take upto several minutes depending on the
-REM number of files being processed and the specs of your PC, there are some
-REM random bugs that I couldn't seem to replicate enough times to diagnose,
-REM usually the script still executes fine and other times just running it again
-REM seems to solve the errors, this batch file can overwrite any file matching
-REM any name provided and their backup copies as well so manually backup any
-REM files you don't want to accidentally overwrite
+REM number of files being processed and the specs of your PC
 
-REM to use defaults place the android openmw.cfg as well as the validator,
-REM omwllf and delta folders in the same folder as this batch file, by default
-REM the android openmw.cfg will be in /sdcard/omw_nightly/config/, your folder
-REM name might be a bit different depending on your OpenMW build, and the
-REM default windows copy will be in %userprofile%\Documents\My Games\OpenMW\,
-REM you can modify the location, name, and output of the .cfg as well as
-REM locations for the apps, and you can choose the output location and names of
-REM the .omwaddon files, android users need to change folderData, replaceData,
-REM folderMod, replaceMod, and omwaddonFolder, and windows users only need to
-REM change the last two
+REM there are some random bugs that I couldn't seem to replicate enough times to
+REM diagnose, usually the script still executes fine and other times just
+REM running it again seems to solve the errors, this script can overwrite any
+REM file matching any name provided and their backup copies as well so manually
+REM backup any files you don't want to accidentally overwrite
 
 REM this option is for users who are using file or folder names containing
 REM non-Latin characters, modify just the number in the line below with the
@@ -38,18 +40,17 @@ REM Latin letters only, which this code and default values are all written in
 REM exclusively, if you are seeing errors in names then your letters aren't
 REM being recognised and you must use a custom codepage identifier, changing
 REM this value may show some errors but the script should execute fine, check
-REM the following link for the correct identifier code for your characters:
+REM the following link for the correct identifier number for your characters:
 REM https://learn.microsoft.com/en-us/windows/win32/intl/code-page-identifiers
 chcp 1252 > NUL
 
 REM name of a configuration file to use to load variables for this script, you
 REM can enter values for variables below in the user variables section or you
-REM can import them from a file, this batch file comes with a pre-configured
-REM variables.cfg file that contains all user variables and default values, the
-REM file can be modified like the openmw.cfg file, delete name to use variables
-REM defined below instead, if not blank then all variables defined below are
-REM ignored, default variable file included is named variables.cfg
-set "varFile="
+REM can import them from a file, this batch file comes with a sample
+REM variables.cfg file that contains all user variable names and default values,
+REM the file can be modified like the openmw.cfg file, variable definitions
+REM below will only be used if this value is empty
+set "varFile=variables2.cfg"
 
 if not "!varFile!" == "" goto skip
 
@@ -101,8 +102,25 @@ REM set value to 1 to disable the .omwaddon folder, use this if you don't store
 REM other mod files in this folder, implies above option so files will also be
 REM disabled, will not disable base Mods folder even if base mods folder is
 REM output for .omwaddon files, will cause errors in the apps if folder contains
-REM other mod files that haven't been disabled manually
+REM other mod files that haven't been disabled manually or added to the
+REM exclusion list below
 set "disableFolder=1"
+
+REM set value to 1 to disable the mods or folders listed below before running
+REM the apps
+set "enableExclude="
+
+REM list the exact names of the mod files (.bsa/.esm/.esp/.omwaddon), ideally
+REM including extension, that should be disabled prior to execution of apps, you
+REM can also include folders to be disabled, folders can be android or windows
+REM paths or just the name of the folder, do not include the names of the
+REM generated .omwaddon files from omwllf/delta as those are disabled elsewhere,
+REM names are separated by commas so file or folder names with commas should be
+REM renamed, will disable every instance of each mod or folder listed including
+REM content, fallback, groundcover, and data lines, include folder names if mods
+REM disabled are only files in those folders, do not split this value into
+REM several lines, this does not use partial matching
+set "excludeMods="
 
 REM location of android version of openmw.cfg on windows, can be a folder, if
 REM file name not provided then openmw.cfg will be used, if left blank will
@@ -119,21 +137,21 @@ REM batch file
 set "output="
 
 REM location of Data Files folder on android, must match paths in openmw.cfg,
-REM use /sdcard instead of /storage/emulated/0, no default value
-set "folderData=sdcard/Download/openmw/Morrowind/Data Files"
+REM no default value
+set "folderData=ANDROID USERS MUST PROVIDE A VALUE HERE"
 
 REM location of Data Files folder on windows, must already contain all base game
 REM and expansion .bsa and .esm files, no default value
-set "replaceData=D:\Morrowind\Data Files"
+set "replaceData=ANDROID USERS MUST PROVIDE A VALUE HERE"
 
-REM location of Mods folder on android, must match paths in openmw.cfg, use
-REM /sdcard instead of /storage/emulated/0, no default value
-set "folderMod=sdcard/Download/openmw/Morrowind/Mod Files"
+REM location of Mods folder on android, must match paths in openmw.cfg, no
+REM default value
+set "folderMod=ANDROID USERS MUST PROVIDE A VALUE HERE"
 
 REM location of Mods folder on windows, must already contain all mods from the
 REM android openmw.cfg in the same folder structure, including all .esm and .esp
 REM files, no default value
-set "replaceMod=D:\Morrowind\Mod Files"
+set "replaceMod=ANDROID/WINDOWS USERS MUST PROVIDE A VALUE HERE"
 
 REM name of folder for .omwaddon files generated by omwllf and delta, must match
 REM paths in openmw.cfg and be inside Mods folder, can include subfolders, if
@@ -141,23 +159,12 @@ REM the omwaddon files are in the base Mods folder then just leave blank, if
 REM folder doesn't exist and either omwllf or delta is enabled it will be
 REM created, if folder not listed in openmw.cfg do not forget to add it along
 REM with the generated .omwaddon files to your openmw.cfg before running game
-set "omwaddonFolder=LAST"
+set "omwaddonFolder=ANDROID/WINDOWS USERS MUST PROVIDE A VALUE HERE"
 
-REM NOTE: the file names of the apps used by this script are hard-coded and will
-REM not be recognised if the file names have been changed, only folder names can
-REM be modified
-
-REM set value to 1 to disable the mods listed below before running the apps
-set "enableExclude=1"
-
-REM list the exact names of the mod files (.bsa/.esm/.esp/.omwaddon), including
-REM extension, that should be disabled prior to execution of apps, do not
-REM include the names of the generated .omwaddon files from omwllf/delta as
-REM those are disabled elsewhere, names are separated by commas so file names
-REM with commas should be renamed, will disable every instance of each mod
-REM listed including fallback/groundcover lines, do not split this value into
-REM several lines
-set "excludeMods=hm-grass-vvardenfell-GROUNDCOVER.esp, hm-grass-mainland-GROUNDCOVER.esp"
+REM the file names of the apps used by this script are hard-coded and will not
+REM be recognised if the file names have been changed, only folder names can be
+REM modified, if for whatever reason you wish to run apps with different names
+REM you can search the code for instances of each file name and replace them
 
 REM set value to 1 to run openmw-validator
 set "enableValidator=1"
@@ -166,11 +173,11 @@ REM set value to 1 to open the generated validator log file after executing
 REM openmw-validator command, it is recommended you use Notepad++ or another
 REM 3rd-party text editor as your default notepad because the log file can get
 REM pretty large and Notepad will struggle to load it
-set "openLog=1"
+set "openLog="
 
 REM set value to 1 to delete the generated validator log file at the end of
 REM execution
-set "deleteLog=1"
+set "deleteLog="
 
 REM location of openmw-validator.exe, can be relative or absolute, this app
 REM does not output to screen so check log for errors with your openmw.cfg
@@ -180,8 +187,7 @@ REM set value to 1 to run OMWLLF
 set "enableOmwllf=1"
 
 REM python must be installed for OMWLLF, set a custom path for python.exe here
-REM if it is not inside the windows PATH variable, leave blank otherwise, path
-REM is absolute
+REM if it is not inside the windows PATH variable, leave blank otherwise
 set "pythonFolder="
 
 REM location of omwllf.py, can be relative or absolute path
@@ -217,12 +223,12 @@ if not "!varFile!" == "" (
 )
 
 echo:
-if "!windowsMode!" == "1" (echo ^>^>^>^> [%time: =0%] running script, windows mode & echo:
-) else echo ^>^>^>^> [%time: =0%] running script, android mode & echo:
+if "!windowsMode!" == "1" (call :writer "running script in windows mode"
+) else call :writer "running script in android mode"
 
-if not "!varFile!" == "" echo ^>^>^>^> [%time: =0%] variables read from !varFile! & echo:
+if not "!varFile!" == "" call :writer "variables read from !varFile!"
 
-if "!enableSilent!" == "1" echo ^>^>^>^> [%time: =0%] silent mode & echo:
+if "!enableSilent!" == "1" call :writer "silent mode"
 
 set folderData=!folderData:\=/!
 if not "!folderData:~0,1!" == "/" set folderData=/!folderData!
@@ -246,7 +252,7 @@ if not "!enableConvert!" == "1" goto validatorBegin
 
 if "!disableFolder!" == "1" set disableFiles=1
 if "!windowsMode!" == "1" if "!enableConvert!" == "1" if not "!disableFiles!" == "1" (
-	echo ^>^>^>^> [%time: =0%] disabling files not enabled, conversion will do nothing & echo:
+	call :writer "conversion does nothing in windows mode if disabling files isn't enabled"
 	goto validatorBegin
 )
 
@@ -259,24 +265,24 @@ if not "!output:~-4!" == ".cfg" set output=!output!\!omw!
 
 if "!windowsMode!" == "1" (
 	set input=!output!.tmp
-	if "!enableConvert!" == "1" copy "!output!" "!output!.tmp" > NUL
+	copy "!output!" "!output!.tmp" > NUL
 ) else (
 	if "!input!" == "" set input=!omw!
 	if not "!input:~-4!" == ".cfg" set input=!input!\!omw!
 )
 
 if not exist !input! (
-	echo ^>^>^>^> [%time: =0%] !input! not found at expected location & echo:
+	call :writer "!input! not found at expected location" 1
 	goto end
 )
-echo ^>^>^>^> [%time: =0%] !input! found & echo:
+call :writer "!input! found"
 
 if "!enableBackup!" == "1" if not "!windowsMode!" == "1" if exist "!output!" (
 	copy "!output!" "!output!.bak" > NUL
-	echo ^>^>^>^> [%time: =0%] backed up !output! & echo:
+	call :writer "backed up !output!"
 )
 
-for /f "tokens=1* delims=]" %%i in ('type "!input!"^|find /v /n "" ^& break ^> "!output!"') do (
+for /f "tokens=1* delims=]" %%i in ('type "!input!" ^| find /v /n "" ^& break ^> "!output!"') do (
 	set line=%%j
 	if not "!line!" == "" (
 		if not "!windowsMode!" == "1" (
@@ -307,14 +313,14 @@ for /f "tokens=1* delims=]" %%i in ('type "!input!"^|find /v /n "" ^& break ^> "
 	) else echo:>> "!output!"
 )
 
-echo ^>^>^>^> [%time: =0%] finished converting !output! & echo:
+call :writer "finished converting !output!"
 
 if not "!output!" == "!outputMask!" (
-	echo ^>^>^>^> [%time: =0%] output location modified, cannot run validator/omwllf/delta & echo:
+	call :writer "output location modified, cannot run validator/omwllf/delta" 1
 	goto end
 )
 
-if "!enableDelay!" == "1" pause & echo:
+if "!enableDelay!" == "1" pause"
 
 :validatorBegin
 
@@ -325,23 +331,23 @@ if "!validatorDir:~0,1!" == "\" set validatorDir=!validatorDir:~1!
 if "!validatorDir:openmw-validator.exe=!" == "!validatorDir!" set validatorDir=!validatorDir!\openmw-validator.exe
 
 if not exist "!validatorDir!" (
-	echo ^>^>^>^> [%time: =0%] !validatorDir! not found at expected location & echo:
+	call :writer "!validatorDir! not found at expected location" 1
 	goto end
 )
 
-echo ^>^>^>^> [%time: =0%] running openmw-validator.exe & echo:
+call :writer "running openmw-validator.exe"
 for /f "tokens=*" %%i in ('"!validatorDir!"') do (set validatorLog=%%i)
 set validatorLog=!validatorLog:Validation completed, log written to: =!
 if not "!validatorLog:~-4!" == ".log" (
-	echo ^>^>^>^> [%time: =0%] error returned by openmw-validator.exe & echo:
+	call :writer "error returned by openmw-validator.exe" 1
 	goto end
 )
 if "!openLog!" == "1" (
 	start "" "!validatorLog!"
 )
-echo ^>^>^>^> [%time: =0%] openmw-validator.exe finished, log saved to: !validatorLog! & echo:
+call :writer "openmw-validator.exe finished, log saved to: !validatorLog!"
 
-if "!enableDelay!" == "1" pause & echo:
+if "!enableDelay!" == "1" pause"
 
 :omwllfBegin
 
@@ -357,7 +363,7 @@ if "!enableTimestamp!" == "1" (
 	set deltaOut=!deltaOut!-!dt!.omwaddon
 	if "!enableBackup!" == "1" (
 		set "enableBackup="
-		echo ^>^>^>^> [%time: =0%] timestamp enabled, .omwaddon files will not be backed up & echo:
+		call :writer "timestamp enabled, .omwaddon files will not be backed up"
 	)
 )
 
@@ -368,19 +374,19 @@ set omwllfDir=!omwllfDir:/=\!
 if "!omwllfDir:~0,1!" == "\" set omwllfDir=!omwllfDir:~1!
 if "!omwllfDir:omwllf.py=!" == "!omwllfDir!" set omwllfDir=!omwllfDir!\omwllf.py
 if not exist "!omwllfDir!" (
-	echo ^>^>^>^> [%time: =0%] !omwllfDir! not found at expected location & echo:
+	call :writer "!omwllfDir! not found at expected location" 1
 	goto end
 )
 
 if "!enableBackup!" == "1" (
 	if exist "!addonComb!\!omwllfOut!" (
 		copy "!addonComb!\!omwllfOut!" "!addonComb!\!omwllfOut!.bak" > NUL
-		echo ^>^>^>^> [%time: =0%] backed up !omwllfOut! & echo:
+		call :writer "backed up !omwllfOut!"
 	)
 )
 
-echo ^>^>^>^> [%time: =0%] running omwllf.py & echo:
-echo ^>^>^>^> [%time: =0%] omwllf writing to !addonComb!\!omwllfOut! & echo:
+call :writer "running omwllf.py"
+call :writer "omwllf writing to !addonComb!\!omwllfOut!"
 if "!enableSilent!" == "1" (
 	"!pythonFolder!" "!omwllfDir!" -m "!omwllfOut!" -d "!addonComb!" > NUL
 ) else (
@@ -388,13 +394,13 @@ if "!enableSilent!" == "1" (
 )
 if !errorlevel! == 1 (
 	echo:
-	echo ^>^>^>^> [%time: =0%] error returned by omwllf.py & echo:
+	call :writer "error returned by omwllf.py" 1
 	goto end
 )
 echo:
-echo ^>^>^>^> [%time: =0%] !omwllfOut! written to !addonComb! & echo:
+call :writer "!omwllfOut! written to !addonComb!"
 
-if "!enableDelay!" == "1" pause & echo:
+if "!enableDelay!" == "1" pause"
 
 :deltaBegin
 
@@ -404,7 +410,7 @@ set deltaDir=!deltaDir:/=\!
 if "!deltaDir:~0,1!" == "\" set deltaDir=!deltaDir:~1!
 if "!deltaDir:delta_plugin.exe=!" == "!deltaDir!" set deltaDir=!deltaDir!\delta_plugin.exe
 if not exist "!deltaDir!" (
-	echo ^>^>^>^> [%time: =0%] !deltaDir! not found at expected location & echo:
+	call :writer "!deltaDir! not found at expected location" 1
 	goto end
 )
 
@@ -413,12 +419,12 @@ if not exist "!addonComb!" md "!addonComb!"
 if "!enableBackup!" == "1" (
 	if exist "!addonComb!\!deltaOut!" (
 		copy "!addonComb!\!deltaOut!" "!addonComb!\!deltaOut!.bak" > NUL
-		echo ^>^>^>^> [%time: =0%] backed up !deltaOut! & echo:
+		call :writer "backed up !deltaOut!"
 	)
 )
 
-echo ^>^>^>^> [%time: =0%] running delta_plugin.exe & echo:
-echo ^>^>^>^> [%time: =0%] delta writing to !addonComb!\!deltaOut! & echo:
+call :writer "running delta_plugin.exe"
+call :writer "delta writing to !addonComb!\!deltaOut!"
 if "!enableSilent!" == "1" (
 	"!deltaDir!" -q merge "!addonComb!\!deltaOut!" > NUL
 ) else (
@@ -426,39 +432,54 @@ if "!enableSilent!" == "1" (
 )
 if !errorlevel! == 1 (
 	echo:
-	echo ^>^>^>^> [%time: =0%] error returned by delta_plugin.exe & echo:
+	call :writer "error returned by delta_plugin.exe" 1
 	goto end
 )
 echo:
-echo ^>^>^>^> [%time: =0%] !deltaOut! written to !addonComb! & echo:
+call :writer "!deltaOut! written to !addonComb!"
 
 :end
 
-if "!enableValidator!" == "1" if "!deleteLog!" == "1" (
+if "!enableValidator!" == "1" if "!deleteLog!" == "1" if exist "!validatorLog!" (
 	del "!validatorLog!"
-	echo ^>^>^>^> [%time: =0%] validator log deleted & echo:
+	call :writer "validator log deleted"
 )
+
 if "!windowsMode!" == "1" if "!enableConvert!" == "1" (
 	if exist "!output!.tmp" (
-		del "!output!"
+		if exist "!output!" del "!output!"
 		ren "!output!.tmp" "!omw!"
 	) else (
-		echo ^>^>^>^> [%time: =0%] !output! could not be restored, temp file not found & echo:
+		call :writer "!output! could not be restored, temp file not found"
 	)
 )
 
-echo ^>^>^>^> [%time: =0%] process finished & echo:
+call :writer "process finished"
 pause
-endlocal
-exit /b
+exit /b !ex!
 
 :parser
 set var=%~1
 for /f "tokens=1* delims=," %%a in ("!var!") do (
-	if not "!line:%%a=!" == "!line!" (
+	set ax=%%a
+	if not "!ax:/=!" == "!ax!" (
+		set ax=!ax:%folderData%=!
+		set ax=!ax:%folderMod%=!
+	) else if not "!ax:\=!" == "!ax!" (
+		set ax=!ax:%replaceData%=!
+		set ax=!ax:%replaceMod%=!
+	) 
+	if not "!line:%ax%=!" == "!line!" (
 		set line=# !line!
 		goto continue
 	)
 	if not "%%b" == "" call :parser "%%b"
 )
 :continue
+exit /b
+
+:writer
+set t=!time: =0!
+echo ^>^>^>^> [!t:~0,-3!] %~1 & echo:
+if not "%~2" == "" set ex=%~2
+exit /b
