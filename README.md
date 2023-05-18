@@ -2,7 +2,7 @@
 
 This is a simple yet highly functional and customisable batch file that will completely automate the process of validating your android or windows openmw.cfg file using <strong><a href="https://mw.moddinghall.com/file/28-openmw-validator">openmw-validator</a></strong> (by <strong><a href="https://hristos.co/">Hristos N. Triantafillou</a></strong>), and then creating .omwaddon files from both <strong><a href="https://github.com/jmelesky/omwllf">OMWLLF</a></strong> (by <strong><a href="https://github.com/jmelesky">John Melesky</a></strong>) and <strong><a href="https://gitlab.com/bmwinger/delta-plugin/-/releases">DeltaPlugin</a></strong> (by <strong><a href="https://gitlab.com/bmwinger">Benjamin Winger</a></strong>). All you need is your android or windows openmw.cfg file and the three apps, and the script does the rest. This script will take the windows or android openmw.cfg file, edit every line to change android paths to corresponding windows paths, disable relevant .omwaddon folder/files, save the new openmw.cfg file into the default OpenMW folder on windows, and then run the three apps and output the .omwaddon files into the user's chosen folder. This is for people like me who do not use a mod manager and prefer a hands-on approach. If you're sick of modifying the windows openmw.cfg file and then running every app each time you make a change to your mod list, then this is my solution for you.
 
-<br>After weeks of painstakingly modding OpenMW android, one mod at a time, trying different versions and alternatives, checking compatibility, consulting several mod lists and trying to combine them, having to repeatedly change and generate the files, disabling the generated files and additional mods that aren't compatible with DeltaPlugin, and finally coming to the conclusion that there's gotta be an easier way. It started off as a simple script of less than fifteen lines. But I kept adding more and more functionality. Eventually I decided there must be others out there who could make use of this script too. So I started expanding it so others could easily modify values and use the features they need. I had to learn a lot about batch files to do this script, I hope it makes your life a little easier.
+After weeks of painstakingly modding OpenMW android, one mod at a time, trying different versions and alternatives, checking compatibility, consulting several mod lists and trying to combine them, having to repeatedly change and generate the files, disabling the generated files and additional mods that aren't compatible with DeltaPlugin, and finally coming to the conclusion that there's gotta be an easier way. It started off as a simple script of less than fifteen lines. But I kept adding more and more functionality. Eventually I decided there must be others out there who could make use of this script too. So I started expanding it so others could easily modify values and use the features they need. I had to learn a lot about batch files to do this script, I hope it makes your life a little easier.
 
 <h3>Current Version: 0.5.0</h3>
 
@@ -36,7 +36,7 @@ On the right side of this page, under Releases, click the latest version, downlo
 
 <br>After editing the values, save the text file then run the batch file like you would any other file. And that's it, now go out there and enjoy your own customised and unique world of Morrowind, on your phone!
 
-<br>Windows users only need to modify "replaceMod" and "omwaddonFolder" values. Enable backup feature to do backup before overwriting. Read the comments in the batch file for further information on all the modes and functions. I suggest <strong><a href="https://notepad-plus-plus.org/downloads/">Notepad++</a></strong> for modifying .bat and .cfg files (it's free). Download all the apps from the links above, you only need the ones you enable. OpenMW windows is not necessary for any of the apps to function. OMWLLF requires python. It is recommended you use just DeltaPlugin as it handles leveled lists better and is still being updated.
+Windows users only need to modify "replaceMod" and "omwaddonFolder" values. Enable backup feature to do backup before overwriting. Read the comments in the batch file for further information on all the modes and functions. I suggest <strong><a href="https://notepad-plus-plus.org/downloads/">Notepad++</a></strong> for modifying .bat and .cfg files (it's free). Download all the apps from the links above, you only need the ones you enable. OpenMW windows is not necessary for any of the apps to function. OMWLLF requires python. It is recommended you use just DeltaPlugin as it handles leveled lists better and is still being updated.
 
 <h2>Changelog:</h2>
 
@@ -115,13 +115,6 @@ On the right side of this page, under Releases, click the latest version, downlo
 <h3>0.1.0 [2023-02-09]:</h3>
 <li>initial release</li>
 
-<h2>Future plans:</h2>
+<h2>Thanks for checking out this project</h2>
 
-<li>allow outputting .omwaddon files to folders outside Mods folder</li>
-<li>allow passing custom openmw.cfg location to all three apps</li>
-<li>silence option works on script output lines too</li>
-<li>output to log</li>
-<li>check folder to be disabled for other mods</li>
-<li>add tes3cmd cleaning option</li>
-
-<br>Feel free to reach out to me for help, bugs, suggestions, or comments by sending me an <strong><a href="mailto:r_b_inc@yahoo.ca">email</a></strong>. Thank you to Hristos N. Triantafillou, John Melesky, and Benjamin Winger for their wonderful apps. Thank you to <strong><a href="https://github.com/OpenMW">the OpenMW team</a></strong>, <strong><a href="https://github.com/xyzz">xyzz</a></strong>, <strong><a href="https://github.com/docent27">Dmitry</a></strong>, and <strong><a href="https://github.com/Sisah2">Sisah2</a></strong> for their amazing work on OpenMW. Thank you to all the modders out there, specially those who are still going at it all these years later. And lastly thank you to Bethesda for making one of my most favourite games.
+Feel free to reach out to me for help, bugs, suggestions, or comments by sending me an <strong><a href="mailto:r_b_inc@yahoo.ca">email</a></strong>. Thank you to Hristos N. Triantafillou, John Melesky, and Benjamin Winger for their wonderful apps. Thank you to <strong><a href="https://github.com/OpenMW">the OpenMW team</a></strong>, <strong><a href="https://github.com/xyzz">xyzz</a></strong>, <strong><a href="https://github.com/docent27">Dmitry</a></strong>, and <strong><a href="https://github.com/Sisah2">Sisah2</a></strong> for their amazing work on OpenMW. Thank you to all the modders out there, specially those who are still going at it all these years later. And lastly thank you to Bethesda for making one of my most favourite games.
