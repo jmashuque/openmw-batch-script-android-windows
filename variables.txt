@@ -1,0 +1,93 @@
+# this file allows you to set variables for the batch file separately, you can
+# edit it like you would the openmw.cfg file, inside the batch file change the
+# first variable, varFile, to the name of this file if you have changed it, do
+# not change variable names and do not put spaces on either side of the equal
+# signs, lines beginning with (#) are comments, read the batch file comments for
+# each variable for information on what they mean, do not use any of the
+# following special characters (!, <, >, |, &, ^, =, :, ", `, ?), do not enclose
+# values in ("), do not split values into several lines, order of variables or
+# empty lines do not matter, the disable and enable lists are separated by (?)
+# so place a (?) between each mod or folder to be excluded and do not place more
+# than one space immediately before or after the (?)
+
+mode=**choose between android/windows/writeonly/reverse**
+
+enableBackup=1
+
+enableTimestamp=
+
+enableSilent=
+
+enableDelay=
+
+enableContinue=
+
+enableCls=
+
+# convert/modify #
+
+enableConvert=1
+
+enableDisabler=
+
+modsDisabler=example one.esp ? D:\Morrowind\Mods\Example2\
+
+enableEnabler=
+
+modsEnabler=Example Three?/Textures/Example 4/
+
+input=
+
+output=
+
+folderData=**needs a default value for android users**
+
+replaceData=**needs a default value for android users**
+
+folderMod=**needs a default value for android users**
+
+replaceMod=**needs a default value for android/windows users**
+
+omwaddonFolder=**needs a default value for android/windows users**
+
+excludeOmwaddons=
+
+excludeOmwaddonsFolder=1
+
+enableCheck=
+
+# openmw-validator #
+
+enableValidator=1
+
+openLog=
+
+deleteLog=1
+
+validatorDir=openmw-validator-1.7
+
+# OMWLLF #
+
+enableOmwllf=
+
+pythonFolder=
+
+omwllfDir=omwllf-master
+
+omwllfOut=omwllf.omwaddon
+
+enableOmwllfExcluder=
+
+modsOmwllfExcluder=
+
+# DeltaPlugin #
+
+enableDelta=1
+
+deltaDir=delta-plugin-0.17.6-windows-amd64
+
+deltaOut=delta.omwaddon
+
+enableDeltaExcluder=
+
+modsDeltaExcluder=

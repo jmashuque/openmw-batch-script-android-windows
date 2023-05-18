@@ -1,53 +1,70 @@
-<h1>Script for OpenMW Android/Windows Users to Automatically Modify openmw.cfg, Run openmw-validator, and Generate OMWLLF/DeltaPlugin .omwaddon Files</h1>
+<h1>Batch File for OpenMW Android/Windows Users to Automatically Modify openmw.cfg, Run openmw-validator, and Generate OMWLLF/DeltaPlugin .omwaddon Files</h1>
 
-This is a simple yet highly functional and customisable batch file that will completely automate the process of validating your android or windows openmw.cfg file using <strong><a href="https://mw.moddinghall.com/file/28-openmw-validator">openmw-validator</a></strong> (by <strong><a href="https://hristos.co/">Hristos N. Triantafillou</a></strong>), and then creating .omwaddon files from both <strong><a href="https://github.com/jmelesky/omwllf">OMWLLF</a></strong> (by <strong><a href="https://github.com/jmelesky">John Melesky</a></strong>) and <strong><a href="https://gitlab.com/bmwinger/delta-plugin/-/releases">DeltaPlugin</a></strong> (by <strong><a href="https://gitlab.com/bmwinger">Benjamin Winger</a></strong>), using an automatically modified openmw.cfg file. All you need is your android or windows openmw.cfg file and the three apps, and the script does the rest. Just modify the values mentioned below and you're good to go. This script will take the windows or android openmw.cfg file, edit every line to change android paths to corresponding windows paths, disable relevant .omwaddon folder/files, save the new openmw.cfg file into the default OpenMW folder on windows, and then run the three apps and output the .omwaddon files into the user's chosen folder. This is for people like me who do not use a mod manager and prefer a hands-on approach. If you're sick of modifying the windows openmw.cfg file and then running every app each time you make a change to your mod list, then this is my solution for you.
+This is a simple yet highly functional and customisable batch file that will completely automate the process of validating your android or windows openmw.cfg file using <strong><a href="https://mw.moddinghall.com/file/28-openmw-validator">openmw-validator</a></strong> (by <strong><a href="https://hristos.co/">Hristos N. Triantafillou</a></strong>), and then creating .omwaddon files from both <strong><a href="https://github.com/jmelesky/omwllf">OMWLLF</a></strong> (by <strong><a href="https://github.com/jmelesky">John Melesky</a></strong>) and <strong><a href="https://gitlab.com/bmwinger/delta-plugin/-/releases">DeltaPlugin</a></strong> (by <strong><a href="https://gitlab.com/bmwinger">Benjamin Winger</a></strong>). All you need is your android or windows openmw.cfg file and the three apps, and the script does the rest. This script will take the windows or android openmw.cfg file, edit every line to change android paths to corresponding windows paths, disable relevant .omwaddon folder/files, save the new openmw.cfg file into the default OpenMW folder on windows, and then run the three apps and output the .omwaddon files into the user's chosen folder. This is for people like me who do not use a mod manager and prefer a hands-on approach. If you're sick of modifying the windows openmw.cfg file and then running every app each time you make a change to your mod list, then this is my solution for you.
 
-After weeks of painstakingly modding OpenMW android, one mod at a time, trying different versions and alternatives, checking compatibility, consulting several mod lists and trying to combine them, having to repeatedly change and generate the files, disabling the generated files and additional mods that aren't compatible with DeltaPlugin, and finally coming to the conclusion that there's gotta be an easier way. It started off as a simple script of less than fifteen lines. But I kept adding more and more functionality. Eventually I decided there must be others out there who could make use of this script too. So I started expanding it so others could easily modify values and use the features they need. I had to learn a lot about batch files to do this script, I hope it makes your life a little easier.
+<br><br>After weeks of painstakingly modding OpenMW android, one mod at a time, trying different versions and alternatives, checking compatibility, consulting several mod lists and trying to combine them, having to repeatedly change and generate the files, disabling the generated files and additional mods that aren't compatible with DeltaPlugin, and finally coming to the conclusion that there's gotta be an easier way. It started off as a simple script of less than fifteen lines. But I kept adding more and more functionality. Eventually I decided there must be others out there who could make use of this script too. So I started expanding it so others could easily modify values and use the features they need. I had to learn a lot about batch files to do this script, I hope it makes your life a little easier.
 
-<h3>Current Version: 0.4.1</h3>
+<h3>Current Version: 0.5.0</h3>
 
 <h2>Features:</h2>
 
-<li>made for android users who want to make mod list changes on-the-fly</li>
-<li>works for windows users too, just enable windows mode and it will preserve the original openmw.cfg</li>
+<li>no prompts, no executables, no java, no python, no perl, just a small batch file</li>
+<li>compatible with any version of windows, requires only the apps you'd like to run</li>
+<li>made for android or windows users who want to make mod list changes on-the-fly</li>
 <li>implements all three of the main apps you should use with OpenMW android or windows</li>
-<li>efficient and speedy, converts large .cfg files in a second</li>
+<li>efficient and speedy, converts large .cfg files in seconds</li>
 <li>backs up any existing files, creates folders if they don't exist</li>
 <li>intuitive, allows absolute/relative paths, fixes slash errors, default values, support for non-Latin characters</li>
 <li>highly customisable, pick steps to perform, open or delete validator log, silent mode, date and time stamp</li>
-<li>automatically disables the OMWLLF/DeltaPlugin .omwaddon files/folder before running apps</li>
-<li>specify a list of mods/folders to disable before running apps, some mods break with DeltaPlugin</li>
+<li>automatically disables the OMWLLF/DeltaPlugin .omwaddon files/folder before running apps, including those timestamped</li>
+<li>specify lists of mods/folders to exclude before running either OMWLLF or DeltaPlugin</li>
+<li>list of folders to exclude will be checked for active mods similar to openmw-validator</li>
 <li>only need to open the batch file in a text editor, modify a few values, save, and then run it</li>
-<li>no need to modify the batch file again unless folder paths change</li>
-<li>disabling feature uses partial matching so timestamped entries will disable too</li>
-<li>define variables in a separate configuration file for quick changing</li>
-<li>no prompts, no executables, no java, no python, no perl, just a small batch file</li>
-<li>compatible with any version of windows, requires only the apps you'd like to run</li>
+<li>define variables in a separate text file for quick changing</li>
+<li>NEW! disable or enable mods or folders using a list, useful even if you don't use the apps</li>
 
 <h2>Usage:</h2>
 
-On the right side of this page, under Releases, click the latest version, download the zip, and unpack it somewhere. For default function, firstly you need your latest openmw.cfg file ready. For android users, ust place the file, as well as the folders for openmw-validator, OMWLLF and DeltaPlugin, in the same folder as runme.bat, then go into the batch file and change the following values:
+On the right side of this page, under Releases, click the latest version, download the zip, and unpack it somewhere. For default function, firstly you need your latest openmw.cfg file ready. For android users, ust place the file, as well as the folders for openmw-validator, OMWLLF and DeltaPlugin, in the same folder as runme.bat, then open "variables.txt" and change the following values:<br><br>
 
+<li>mode = use "android" or "windows" without quotes</li>
 <li>folderData = location of Data Files folder on android</li>
 <li>replaceData = location of Data Files folder on windows</li>
 <li>folderMod = location of Mods folder on android</li>
 <li>replaceMod = location of Mods folder on windows</li>
 <li>omwaddonFolder = output folder of generated .omwaddon files, same name as android, must be inside the above Mods folder</li>
 
-<br>After editing the values, save the batch file then run it. Additionally you may define the values inside the included variables.cfg file if that's easier. And that's it, now go out there and enjoy your own customised and unique world of Morrowind, on your phone!
+<br>After editing the values, save the text file then run the batch file like you would any other file. And that's it, now go out there and enjoy your own customised and unique world of Morrowind, on your phone!
 
- Windows users need to enable windows mode and only need to modify "replaceMod" and "omwaddonFolder" values, the script will use a temp file to preserve the original windows openmw.cfg file so a separate copy of openmw.cfg does not need to be provided. Read the comments in the batch file for further information on each variable. I suggest <strong><a href="https://notepad-plus-plus.org/downloads/">Notepad++</a></strong> for modifying .bat and .cfg files (it's free). Download all the apps from the links above, you only need the ones you enable. OpenMW windows is not necessary for any of the apps to function. OMWLLF requires python.
+<br><br>Windows users only need to modify "replaceMod" and "omwaddonFolder" values. Enable backup feature to do backup before overwriting. Read the comments in the batch file for further information on all the modes and functions. I suggest <strong><a href="https://notepad-plus-plus.org/downloads/">Notepad++</a></strong> for modifying .bat and .cfg files (it's free). Download all the apps from the links above, you only need the ones you enable. OpenMW windows is not necessary for any of the apps to function. OMWLLF requires python. It is recommended you use just DeltaPlugin as it handles leveled lists better and is still being updated.
 
 <h2>Changelog:</h2>
 
-<h3>0.5.0 [upcoming]:</h3>
-<li>all folders to be disabled will be checked against openmw.cfg for mods that haven't been disabled</li>
-<li>read validator log to report if errors were found or not</li>
+<h3>0.6.0 [upcoming]:</h3>
 <li>add support for tes3cmd and TR Filepatcher</li>
+<li>enhanced partial matching to search out of order</li>
+<li>speed up disabling .omwaddon mods/folder if mod disabling feature not enabled</li>
+<li>can disable or enable mods found in folders specified</li>
+<li>no longer enables lines with comments</li>
+<li>less confusing mode system</li>
+<li>output issues found in validator log to screen</li>
+<li>changes to checking disabled folders to exclude already excluded lines</li>
+
+<h3>0.5.0 [2023-05-17]:</h3>
+<li>ability to specify a list of mods/folders to disable or enable, useful if you categorise mods or wish to disable or enable many lines</li>
+<li>disabled mods list separated for each app and are now delimited by a question mark since file/folder names can't contain them</li>
+<li>disabled folders can be checked for active mods before running each app, and non-existent excluded folders will be reported</li>
+<li>allows specifying modes, including new modes "reverse" and "writeonly"</li>
+<li>openmw-validator now reads from and writes to same documents folder as shell</li>
+<li>reads validator log to report if errors were found or not</li>
+<li>added option to clear screen before execution</li>
+<li>fixed error introduced in 0.4.0 that disabled the first line when excluding mods</li>
+<li>fixed issue with file names containing single quotes</li>
+<li>minor bug fixes, logic and performance optimisation, improved readability, further code cleaning</li>
 
 <h3>0.4.1 [2023-03-06]:</h3>
 <li>list of mods to disable can include folders with android/windows paths or just folder name</li>
-<li>fixed error when deleting non-existent validator log</li>
+<li>fixed error when deleting non-existent files</li>
 <li>returns exit code of 1 if error detected</li>
 <li>cleaned code some more</li>
 
