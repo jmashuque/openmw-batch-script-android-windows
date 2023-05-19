@@ -56,7 +56,7 @@ REM can import them from a file, this batch file comes with a variables.txt
 REM file that contains all user variable names and default values, the file can
 REM be modified like the openmw.cfg file, variable definitions below will only
 REM be used if this value is empty
-set "varFile=variables.cfg"
+set "varFile=variables.txt"
 
 if defined varFile goto skipVar
 
