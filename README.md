@@ -88,8 +88,9 @@ Set convertTo to android or windows, enable ignoreInput and enableReverse.
 <h3>Disable/Enable Mod Groupings</h3>
 Enable disableSearchExact and modify the appropriate variable depending on what function you're using. For example, you can disable all Tyddy textures that are HQ by specifying:
 <pre>
-disableSearchExact=True
-modsDisabler=Tyddy HQ
+  disableSearchExact=True
+  enableDisabler=1
+  modsDisabler=Tyddy HQ
 </pre>
 and the script will match any lines that contain each term in any order.
 
