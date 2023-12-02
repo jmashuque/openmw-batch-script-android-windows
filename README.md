@@ -61,7 +61,7 @@ No prompts, no executables, no java, no python, just a small batch file. All you
 
 On the right side of this page, under Releases, click the latest version, download the zip, and unpack it somewhere. Firstly you need your latest openmw.cfg file ready, see the batch file for default locations. For Android users, just place the file in the same folder as runme.bat. For Windows users, the openmw.cfg at the default location will be used. Copy the folders for openmw-validator, tr-patcher, OMWLLF and/or DeltaPlugin, into the same folder as runme.bat, if their names match the default values they will be located. For tes3cmd, the executable must be placed inside the Data Files folder. Open variables.txt and change the following values:<br>
 
-<li>convertTo = use Windows or Android</li>
+<li>convertTo = use windows or android</li>
 <li>folderData = location of Data Files folder on Android</li>
 <li>replaceData = location of Data Files folder on Windows</li>
 <li>folderMod = location of Mods folder on Android</li>
