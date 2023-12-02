@@ -3,76 +3,104 @@
 # first variable, varFile, to the name of this file if you have changed it, do
 # not change variable names and do not put spaces on either side of the equal
 # signs, lines beginning with (#) are comments, read the batch file comments for
-# each variable for information on what they mean, do not use any of the
-# following special characters (!, <, >, |, &, ^, =, :, ", `, ?), do not enclose
-# values in ("), do not split values into several lines, order of variables or
-# empty lines do not matter, the disable and enable lists are separated by (?)
-# so place a (?) between each mod or folder to be excluded and do not place more
-# than one space immediately before or after the (?)
+# each variable for information on what they mean, all values are case sensitive
+# do not use any of the following special characters
+# (!, <, >, |, &, ^, =, :, ", `, *, ?), do not enclose values in ("), do not
+# split values into several lines, order of variables or empty lines do not
+# matter, variables that can be enabled can be done so by assigning any value,
+# the disable/enable/exclude lists are separated by a question mark (?) so place
+# one between each mod or folder to be excluded and do not place more than one
+# space immediately before or after the (?)
 
-mode=**choose between android/windows/writeonly/reverse**
+# files/folders #
+
+fileAnd=
+
+fileWin=
+
+folderAndData=*** enter a value ***
+
+folderAndMods=*** enter a value ***
+
+folderWinData=*** enter a value ***
+
+folderWinMods=*** enter a value ***
+
+folderOmwaddon=*** enter a value ***
+
+# general options #
 
 enableBackup=1
 
-enableTimestamp=
-
-enableSilent=
+enableCls=
 
 enableDelay=
 
-enableContinue=
+runOpenmw=
 
-enableCls=
+disableApps=
 
 # convert/modify #
 
 enableConvert=1
 
+convertTo=windows
+
 enableDisabler=
 
-modsDisabler=example one.esp ? D:\Morrowind\Mods\Example2\
+modsDisabler=Example1.esp ? example two?example/three/
 
 enableEnabler=
 
-modsEnabler=Example Three?/Textures/Example 4/
+modsEnabler=Example1.esp ? example two?example/three/
 
-input=
-
-output=
-
-folderData=**needs a default value for android users**
-
-replaceData=**needs a default value for android users**
-
-folderMod=**needs a default value for android users**
-
-replaceMod=**needs a default value for android/windows users**
-
-omwaddonFolder=**needs a default value for android/windows users**
-
-excludeOmwaddons=
-
-excludeOmwaddonsFolder=1
+# convert/modify options #
 
 enableCheck=
 
-# openmw-validator #
+enableLastModified=
+
+disableSearchExact=
+
+enableReverse=
+
+enableVerbose=
+
+ignoreInput=
+
+# app: openmw-validator #
 
 enableValidator=1
 
+deleteLog=
+
 openLog=
 
-deleteLog=1
+outputWarning=1
 
 validatorDir=openmw-validator-1.7
 
-# OMWLLF #
+# app: tes3cmd #
+
+enableTes3cmd=
+
+modsTes3cmd=
+
+# app: tr-patcher #
+
+enableTrpatch=
+
+trpatchDir=tr-patcher
+
+modsTrpatch=
+
+# app: omwllf #
 
 enableOmwllf=
 
 pythonFolder=
 
-omwllfDir=omwllf-master
+omwllfDir=omwllf-1.0
 
 omwllfOut=omwllf.omwaddon
 
@@ -80,14 +108,28 @@ enableOmwllfExcluder=
 
 modsOmwllfExcluder=
 
-# DeltaPlugin #
+# app: delta #
 
 enableDelta=1
 
-deltaDir=delta-plugin-0.17.6-windows-amd64
+deltaDir=delta-plugin-0.19.0-windows-amd64
 
 deltaOut=delta.omwaddon
 
 enableDeltaExcluder=
 
 modsDeltaExcluder=
+
+# app options #
+
+autoRewrite=
+
+enableContinue=
+
+enableSilent=
+
+enableTimestamp=
+
+excludeOmwaddons=1
+
+excludeOmwaddonsFolder=
