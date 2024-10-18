@@ -7,7 +7,7 @@ setlocal enabledelayedexpansion
 @REM ###################### requires windows 10 or above #######################
 @REM ###########################################################################
 
-@REM version: 1.0
+@REM version: 1.1
 @REM by: https://github.com/jmashuque
 @REM only run this batch file if you downloaded it from:
 @REM https://github.com/jmashuque/openmw-batch-script-android-windows
@@ -44,7 +44,7 @@ setlocal enabledelayedexpansion
 @REM only one of these apps still in development, so you can enter a different
 @REM version here and it will be used:
 
-set deltaversion=0.19.0
+set deltaversion=0.22.0
 
 @REM you can manually change the following download links too, or contact me to
 @REM report that dead links need to be updated

@@ -27,7 +27,7 @@ No prompts, no executables, no java, no python, just a small batch file. All you
 
 <br>This is for people like me who do not use a mod manager and prefer a hands-on approach. If you're sick of modifying the Windows openmw.cfg file, running Delta, then converting to Android manually each time you make a change to your mod list, then this is my solution for you. After weeks of painstakingly modding OpenMW Android, one mod at a time, trying different versions and alternatives, checking compatibility, consulting several mod lists and trying to combine them, having to repeatedly change and generate the files, disabling the generated files and additional mods that aren't compatible with DeltaPlugin, I finally came to the conclusion that there's gotta be an easier way. It started off as a simple script of less than fifteen lines. But I kept adding more and more functionality. Eventually I decided there must be others out there who could make use of this script too. So I started expanding it so others could easily modify values and use the features they need. I had to learn a lot about batch files to do this script, with zero use of AI. I hope it makes your life a little easier.
 
-<h4>Current Version: 0.6.0</h4>
+<h4>Current Version: 0.6.1</h4>
 
 <h3>At a Glance:</h3>
 
@@ -88,9 +88,9 @@ Set convertTo to android or windows, enable ignoreInput and enableReverse.
 <h3>Disable/Enable Mod Groupings</h3>
 Enable disableSearchExact and modify the appropriate variable depending on what function you're using. For example, you can disable all Tyddy textures that are HQ by specifying:
 <pre>
-  disableSearchExact=True
-  enableDisabler=1
-  modsDisabler=Tyddy HQ
+    disableSearchExact=True
+    enableDisabler=1
+    modsDisabler=Tyddy HQ
 </pre>
 and the script will match any lines that contain each term in any order.
 
@@ -103,6 +103,9 @@ Batch files can be very dangerous. They can do some destructive and irreversible
 <h3>Future (maybe):</h3>
 <li>can disable or enable all mods found in folders specified</li>
 <li>write new lines in openmw.cfg for enabled mods not found</li>
+
+<h3>0.6.1 [2023-10-18]:</h3>
+<li>updated DeltaPlugin to version 0.22.0</li>
 
 <h3>0.6.0 [2023-12-02]:</h3>
 <li>support for tr-patcher and tes3cmd clean function, takes list of mod names and finds any that exist in your data paths and runs app on them</li>

@@ -6,7 +6,7 @@ setlocal enabledelayedexpansion
 @REM ############ openmw batch script for android and windows users ############
 @REM ###########################################################################
 
-@REM version: 0.6.0 (2023-12-02)
+@REM version: 0.6.1 (2024-10-18)
 @REM by: https://github.com/jmashuque
 @REM only run this batch file if you downloaded it from:
 @REM https://github.com/jmashuque/openmw-batch-script-android-windows
