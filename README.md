@@ -104,7 +104,7 @@ Batch files can be very dangerous. They can do some destructive and irreversible
 <li>can disable or enable all mods found in folders specified</li>
 <li>write new lines in openmw.cfg for enabled mods not found</li>
 
-<h3>0.6.1 [2023-10-18]:</h3>
+<h3>0.6.1 [2024-10-18]:</h3>
 <li>updated DeltaPlugin to version 0.22.0</li>
 
 <h3>0.6.0 [2023-12-02]:</h3>
